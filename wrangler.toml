@@ -3,12 +3,11 @@ pages_build_output_dir = "./dist"
 compatibility_date = "2024-12-12"
 pages_dev = false 
 
-[[routes]]
-pattern = "barretoads.dev/*" 
-script = "barreto-realtor-cbnovac"
+routes = [
+  "barretoads.dev",
+  "www.barretoads.dev/*"
+]
 
-[[routes]]
-pattern = "www.barretoads.dev/*" # Subdominio www
 script = "barreto-realtor-cbnovac"
 
 [placement]
