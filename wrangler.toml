@@ -1,14 +1,17 @@
 name = "barreto-realtor-cbnovac"
-pages_build_output_dir = "./dist"
+pages_build_output_dir = "./dist" 
 compatibility_date = "2024-12-12"
+pages_dev = false 
 
 [[routes]]
-pattern = "barretoads.dev/*"
+pattern = "barretoads.dev/*" 
+script = "barreto-realtor-cbnovac"
+
+[[routes]]
+pattern = "www.barretoads.dev/*" # Subdominio www
 script = "barreto-realtor-cbnovac"
 
 [placement]
- mode = "smart"
+mode = "smart" # Optimización de ubicación del Worker
 
-[vars] 
-# Aquí puedes definir tus variables de entorno si las necesitas
 
