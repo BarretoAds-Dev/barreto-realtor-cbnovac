@@ -1,5 +1,5 @@
 name = "barreto-realtor-cbnovac"
-main = "./dist"
+pages_build_output_dir = "./dist"
 compatibility_date = "2024-12-12"
 
 [placement]
