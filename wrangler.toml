@@ -1,16 +1,7 @@
 name = "barreto-realtor-cbnovac"
 pages_build_output_dir = "./dist" 
-compatibility_date = "2024-12-12"
-pages_dev = false 
-
-routes = [
-  "barretoads.dev",
-  "www.barretoads.dev/*"
-]
-
-script = "barreto-realtor-cbnovac"
+compatibility_date = "2024-12-12" 
+pages_dev = false
 
 [placement]
-mode = "smart" # Optimización de ubicación del Worker
-
-
+mode = "smart"
