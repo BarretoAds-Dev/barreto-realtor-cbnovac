@@ -4,13 +4,26 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "w-deploy": "wrangler pages deploy",
+    "w-dev": "wrangler pages dev",
+    "github": "git add . && git commit -m \"Deploy: $(date +'%Y-%m-%d %H:%M:%S')\" && git push origin HEAD",
+    "cf-typegen": "wrangler types",
+    "s-build": "astro build",
+    "clean": "rm -rf dist .astro cache .vite && pnpm store prune",
+    "build": "pnpm run clean && astro check && astro build && pnpm run github && pnpm run w-deploy"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.3",
     "astro": "^5.0.5",
-    "tailwindcss": "^3.4.16"
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2",
+    "wrangler": "^3.95.0"
+  },
+  "devDependencies": {
+    "@astrojs/cloudflare": "^12.0.1"
   }
 }
