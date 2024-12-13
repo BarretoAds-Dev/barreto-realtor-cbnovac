@@ -1,0 +1,29 @@
+---
+const { title, description, url } = Astro.props;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+
+  <link rel="canonical" href={url} />
+
+
+  <!-- Metadatos de Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={url} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Barreto | Asesor Inmobiliario en Coldwell Banker Novac - CDMX/MX." />
+  <meta property="og:locale" content="es_ES" />
+
+ 
+  <!-- Robots meta tag for SEO control -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+
+</head>

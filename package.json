@@ -24,6 +24,7 @@
     "wrangler": "^3.95.0"
   },
   "devDependencies": {
-    "@astrojs/cloudflare": "^12.0.1"
+    "@astrojs/cloudflare": "^12.0.1",
+    "@fullhuman/postcss-purgecss": "^7.0.2"
   }
 }

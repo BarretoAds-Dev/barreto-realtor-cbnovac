@@ -1,20 +1,35 @@
+---
+import Metahead from '../layouts/Metahead.astro';
+
+
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  image: string;
+}
+
+const { title, description, url, image } = Astro.props;
+---
+
 <!doctype html>
+
+
 <html lang="es" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Basics</title>
-  </head>
+<Metahead title={title} description={description} url={url} image={image} />
+
+
   <body>
-    <main>
-      <slot />
-    </main>
+		<main>
+			<slot />
+		</main>
   </body>
+
+
 </html>
 
 <style is:global>
+@tailwind utilities;
 
 
 	html, body {
@@ -22,7 +37,7 @@
 	}
 
 	main, section, div {
-	@apply flex flex-col bg-red-500 justify-center items-center w-full h-screen;
+	@apply flex flex-col justify-center items-center w-full h-screen;
 	}
 
 	section, div {

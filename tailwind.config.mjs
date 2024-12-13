@@ -11,7 +11,7 @@ export default {
 		},
 	},
 	corePlugins: {
-		preflight: true, // Mantiene el preflight para eliminar estilos del navegador
+		preflight: false, 
 	},
 	plugins: [],
 };
