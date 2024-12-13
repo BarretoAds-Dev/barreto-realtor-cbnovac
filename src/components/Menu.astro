@@ -31,6 +31,7 @@ const currentPath = Astro.url.pathname;
               aria-current={isActive ? 'page' : undefined}
               class={`nav-link ${isActive ? 'active-link' : ''}`}
               itemprop="url"
+              rel="prefetch"
             >
               <span itemprop="name">{label}</span>
             </a>
