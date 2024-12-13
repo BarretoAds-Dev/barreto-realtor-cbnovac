@@ -8,6 +8,9 @@ export default {
 				fontlight: '#F9EBE0',
 				colorcaution: '#DD0426',
 			},
+			fontFamily: {
+				montserrat: ['"montserrat"', 'sans-serif'],
+			  },
 		},
 	},
 	corePlugins: {

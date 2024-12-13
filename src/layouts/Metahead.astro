@@ -1,5 +1,8 @@
 ---
 const { title, description, url } = Astro.props;
+
+const fontUrl =
+  "https://cdn.jsdelivr.net/fontsource/fonts/montserrat:vf@latest/latin-wght-normal.woff2";
 ---
 
 <head>
@@ -12,6 +15,18 @@ const { title, description, url } = Astro.props;
 
   <link rel="canonical" href={url} />
 
+
+    <!-- Precarga de la fuente -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
+    <link
+      rel="preload"
+      href={fontUrl}
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+      fetchpriority="high"
+    />
+  
 
   <!-- Metadatos de Open Graph -->
   <meta property="og:title" content={title} />

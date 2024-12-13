@@ -1,0 +1,54 @@
+---
+
+const menuItems = [
+  { label: 'Conóceme', href: '/' },
+  { label: 'Propiedades', href: '/propiedades' },
+  { label: 'Servicios', href: '/servicios' },
+];
+const currentPath = Astro.url.pathname;
+---
+
+<header class="w-96 p-4">
+  <nav
+    class="bg-blue-950 p-2"
+    itemscope
+    itemtype="https://schema.org/SiteNavigationElement"
+    aria-label="Principal"
+  >
+    <ul class="m-0 p-0">
+      {menuItems.map(({ label, href }) => {
+        const isActive = currentPath === href;
+        return (
+          <li itemscope itemtype="https://schema.org/ListItem">
+            <a
+              href={href}
+              aria-current={isActive ? 'page' : undefined}
+              class={`nav-link ${isActive ? 'active-link' : ''}`}
+            >
+              {label}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+</header>
+
+<style>
+
+header, nav, ul, .nav-link {
+        @apply flex flex-row rounded-md justify-center items-center list-none gap-4 text-fontlight m-auto;
+}
+
+.nav-link {
+    @apply inline-block px-4 py-2 bg-blue-800 no-underline hover:bg-blue-900 font-bold hover:scale-105 transition-transform ;
+}
+
+
+.active-link {
+    @apply outline outline-2 outline-white bg-blue-600;
+ 
+}
+
+ 
+</style>
