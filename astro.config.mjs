@@ -6,7 +6,7 @@ import viteCompression from 'vite-plugin-compression';
 import critical from 'rollup-plugin-critical';
 
 export default defineConfig({
-  output: 'server',
+  output: 'static',
   adapter: cloudflare({
     imageService: 'cloudflare',
     platformProxy: { enabled: true },
