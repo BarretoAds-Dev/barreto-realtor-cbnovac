@@ -4,6 +4,7 @@ import cloudflare from '@astrojs/cloudflare';
 import tailwind from '@astrojs/tailwind';
 import viteCompression from 'vite-plugin-compression';
 
+
 export default defineConfig({
   output: 'server',
   adapter: cloudflare({
@@ -12,8 +13,9 @@ export default defineConfig({
   }),
   integrations: [
     tailwind({
-      applyBaseStyles: false,
+      applyBaseStyles: true,
     }),
+ 
   ],
   vite: {
     build: {
@@ -23,6 +25,7 @@ export default defineConfig({
         treeshake: {
           moduleSideEffects: false,
         },
+        
       },
     },
     plugins: [

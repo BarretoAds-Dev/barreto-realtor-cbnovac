@@ -14,7 +14,7 @@ export default {
 		},
 	},
 	corePlugins: {
-		preflight: false, 
+		preflight: true, 
 	},
 	plugins: [],
 };
