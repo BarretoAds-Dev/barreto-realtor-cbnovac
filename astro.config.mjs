@@ -3,7 +3,6 @@ import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 import tailwind from '@astrojs/tailwind';
 import viteCompression from 'vite-plugin-compression';
-import critical from 'rollup-plugin-critical';
 
 export default defineConfig({
   output: 'static',
@@ -22,21 +21,6 @@ export default defineConfig({
       cssCodeSplit: true,
       rollupOptions: {
         plugins: [
-          critical({
-            criticalBase: './dist/', // Carpeta base donde se encuentran los HTML generados
-            criticalPages: [
-              { uri: 'index.html', template: 'index' }, // Página principal
-              { uri: 'propiedades.html', template: 'propiedades' }, // Página de propiedades
-              { uri: 'servicios.html', template: 'servicios' }, // Página de servicios
-            ],
-            inline: true, // Inserta el CSS crítico directamente en el HTML
-            extract: false, // No extraer las reglas completas del CSS base
-            dimensions: [
-              { width: 1300, height: 900 }, // Desktop
-              { width: 375, height: 667 }, // Mobile
-            ],
-            minify: true, // Comprime el CSS crítico generado
-          }),
         ],
       },
     },
