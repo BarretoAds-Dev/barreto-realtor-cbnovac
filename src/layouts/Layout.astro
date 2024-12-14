@@ -48,17 +48,30 @@ const { title, description, url, image } = Astro.props;
   }
 
 	html, body {
-		@apply flex flex-col m-0 p-0 box-border min-h-screen  w-screen antialiased bg-bodydark text-fontlight font-montserrat justify-center items-center ;
+		@apply  flex-col m-0 p-0 box-border min-h-screen  w-screen antialiased bg-bodydark text-fontlight font-montserrat justify-center items-center ;
 	}
 
 	main {
-	@apply flex flex-col justify-center items-center w-full h-screen;
+	@apply flex flex-col justify-center items-center w-full;
 	}
+ 
+	section {
+		@apply m-0 p-0 text-center text-base font-normal flex flex-col justify-center items-center;
+	} 
 
-	section, div {
-		@apply m-0 p-8 gap-4 text-center text-base font-normal;
-	}
+  /* Estilos globales */
+h1, h2, h3, h4, h5, h6, p, li, a  {
+    @apply m-0 p-0 text-center  text-base font-normal no-underline;
+}
 
 
+
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  display: none;
+}
+scrollbar-width: none; /* For Firefox */
+-ms-overflow-style: none; /* For IE/Edge */
 	 
 </style>

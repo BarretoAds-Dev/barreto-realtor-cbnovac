@@ -1,0 +1,100 @@
+---
+import "remixicon/fonts/remixicon.css";
+import userData from "../data/user.json";
+
+const profileVideo = "/";
+const profilePlaceholder = "/";
+
+const { profileData, links, stats, description } = userData;
+---
+
+<article class="grid gap-4 w-[375px] bg-gray-800 p-4 border-solid border-4  border-blue-700 rounded-md place-items-center">
+
+    <!-- Perfil -->
+      <figure class="m-0 p-0 w-24 h-24 rounded-full overflow-hidden border-solid border-2 border-white bg-red-800">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          width="auto"
+          height="auto"
+          poster={profilePlaceholder} 
+          class="w-full h-full object-cover aspect-video lazy-video"
+          aria-label={`${profileData.profileName} video`}
+        >
+          <source src={profileVideo} type="video/mp4" />
+          <img src={profilePlaceholder} alt="Placeholder image" class="w-full h-full object-cover" />
+
+        </video>
+      </figure>
+
+         <!-- Status -->
+      <div class="flex justify-center items-center gap-2 bg-black text-gray-400 text-xs italic py-2 px-4 rounded-full">
+        <span class="h-2 w-2 bg-green-500 rounded-full animate-pulse"></span>
+        <span>{profileData.onlineStatusText}</span>
+      </div>
+    </div>
+
+    
+
+    <!-- Name and Role -->
+    <div class="flex flex-col  gap-2 justify-center items-center w-full text-center  ">
+      <h1 class="text-2xl">{profileData.profileName}</h1>
+      <p class="text-sm">
+        {profileData.roleDescription}
+        <a
+          href={links[0].url}
+          class="text-yellow-400 text-sm "
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {links[0].title}
+        </a>
+      </p>
+    </div>
+
+    <!-- Location Tags -->
+    <div class="w-full grid grid-cols-2 gap-2">
+      {profileData.locationTags.map((tag) => (
+        <span
+          class="text-sm bg-gray-700 py-2 px-4 rounded-lg text-center text-gray-300"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+
+    <!-- Description -->
+    <div class="w-full">
+      {description.map((line) => (
+        <p>{line}</p>
+      ))}
+    </div>
+
+    <!-- Links -->
+    <div class="w-full grid grid-cols-2 gap-2 place-content-center">
+      {links.slice(1).map((link) => (
+        <a
+          href={link.url}
+          class="flex justify-center items-center gap-2 py-2 px-4 bg-gray-700 text-sm text-center text-gray-300 hover:bg-gray-600 rounded-lg transition-colors duration-300"
+          aria-label={link.description}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class={`${link.icon} text-sm text-yellow-400 `}></i>
+          <span>{link.title}</span>
+        </a>
+      ))}
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-3 gap-4 place-items-center  w-full">
+      {stats.map((stat) => (
+        <div class=" flex flex-col justify-center text-center max-w-[100px] ">
+          <strong class="text-xl font-bold">{stat.value}</strong>
+          <span class="text-sm text-gray-400">{stat.label}</span>
+        </div>
+      ))}
+    </div>
+</article>
