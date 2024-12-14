@@ -9,33 +9,3 @@ mode = "smart"
 account_id = "CLOUDFLARE_ACCOUNT_ID"
 zone_id = "CLOUDFLARE_ZONE_ID"
 
-
-# Configuración de las reglas de caché
-[[cache.rules]]
-  # Regla para activos estáticos (JS, CSS, imágenes, fuentes, etc.)
-  pattern = "/*.{js,css,woff2,png,jpg,jpeg,svg,gif,ico,webp,avif}"
-  cache_level = "cache_everything"
-  edge_ttl = 31536000       # Tiempo en segundos (1 año)
-  browser_ttl = 31536000    # Tiempo en segundos (1 año)
-  origin_ttl = 31536000     # Tiempo en segundos (1 año)
-
-[[cache.rules]]
-  # Regla para archivos HTML
-  pattern = "/*.html"
-  cache_level = "cache_first"
-  edge_ttl = 3600            # Tiempo en segundos (1 hora)
-  browser_ttl = 3600         # Tiempo en segundos (1 hora)
-  origin_ttl = 3600          # Tiempo en segundos (1 hora)
-
-[[cache.rules]]
-  # Regla para rutas dinámicas o API
-  pattern = "/api/*"
-  cache_level = "bypass"
-
-[[cache.rules]]
-  # Regla para fuentes web específicas si es necesario
-  pattern = "/fonts/*"
-  cache_level = "cache_everything"
-  edge_ttl = 31536000
-  browser_ttl = 31536000
-  origin_ttl = 31536000

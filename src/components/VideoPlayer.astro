@@ -1,0 +1,17 @@
+---
+const { profileVideo, profilePlaceholder, profileName } = Astro.props;
+---
+
+<figure class="m-0 p-0 w-24 h-24 rounded-full overflow-hidden border-2 border-white bg-red-800">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    poster={profilePlaceholder}
+    class="w-full h-full object-cover aspect-video lazy-video"
+    aria-label={`${profileName} video de perfil`}
+  >
+    <source src={profileVideo} type="video/mp4" />
+  </video>
+</figure>

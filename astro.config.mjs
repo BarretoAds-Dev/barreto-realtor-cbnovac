@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 import tailwind from '@astrojs/tailwind';
 
+
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
@@ -12,5 +13,9 @@ export default defineConfig({
   }),
 
   integrations: [
-    tailwind({ applyBaseStyles: false })]
+    tailwind({ applyBaseStyles: false }),
+  ],
+
+
+
 });
