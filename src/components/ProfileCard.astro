@@ -1,7 +1,6 @@
 ---
 import "remixicon/fonts/remixicon.css";
 import userData from "../data/user.json";
-import VideoPlayer from "../components/VideoPlayer.astro";
 
 
 const profileVideo = "/";
@@ -12,13 +11,7 @@ const { profileData, links, stats, description } = userData;
 
 <article class="grid gap-4 w-[375px] bg-gray-800 p-4 border-solid border-4  border-blue-700 rounded-md place-items-center">
 
-      <!-- Video (Astro Island) -->
-  <VideoPlayer
- 
-  profileVideo={profileVideo}
-  profilePlaceholder={profilePlaceholder}
-  profileName={profileData.profileName}
-/>
+  
 
     <!-- Perfil -->
       <figure class="m-0 p-0 w-24 h-24 rounded-full overflow-hidden border-solid border-2 border-white bg-red-800">
