@@ -8,19 +8,19 @@
     "links": [
       {
         "url": "https://www.coldwellbanker.com.mx/perfil-oficina/coldwell-banker-novac?idOficina=180",
-        "icon": "ri-building-line",
+        "icon": "/icons/instagram.svg",
         "title": "Coldwell Banker Novac",
         "description": "Perfil de oficina en Coldwell Banker"
       },
       {
         "url": "https://www.instagram.com/barreto.coldwellbanker/",
-        "icon": "ri-instagram-line",
+        "icon": "/icons/instagram.svg",
         "title": "Instagram",
         "description": "Perfil de Instagram"
       },
       {
         "url": "https://api.whatsapp.com/send?phone=5215526838286",
-        "icon": "ri-whatsapp-line",
+        "icon": "/icons/instagram.svg",
         "title": "WhatsApp",
         "description": "Contacto por WhatsApp"
       }

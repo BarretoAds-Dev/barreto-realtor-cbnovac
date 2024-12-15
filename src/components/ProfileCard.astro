@@ -76,7 +76,8 @@ const { profileData, links, stats, description } = userData;
           target="_blank"
           rel="noopener noreferrer"
         >
-          {/* <i class={`${link.icon} text-sm text-yellow-400 `}></i> */}
+          <img src={link.icon} alt={`${link.title} icon`} 
+          class="w-4 h-4" />
           <span>{link.title}</span>
         </a>
       ))}
@@ -92,5 +93,4 @@ const { profileData, links, stats, description } = userData;
       ))}
     </div>
 </article>
-
 
