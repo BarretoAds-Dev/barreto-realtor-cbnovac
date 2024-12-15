@@ -5,9 +5,9 @@ const menuItems = [
   { label: 'Servicios', href: '/servicios' },
 ];
 
+// Detecta la ruta activa
 const currentPath = Astro.url.pathname;
 ---
-
 <header class="header-container">
   <nav
     class="nav-container"
@@ -18,7 +18,7 @@ const currentPath = Astro.url.pathname;
   >
     <ul class="nav-list">
       {menuItems.map(({ label, href }, i) => {
-        const isActive = currentPath === href;
+        const isActive = currentPath === href; // Verifica si es la ruta activa
         return (
           <li
             itemscope
@@ -43,23 +43,28 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <style>
+/* Contenedor del header */
 .header-container {
   @apply p-4 flex flex-row justify-center items-center;
 }
 
+/* Contenedor del menú */
 .nav-container {
   @apply bg-blue-800 p-2 flex justify-center items-center rounded-md w-[400px];
 }
 
+/* Lista del menú */
 .nav-list {
   @apply flex list-none gap-2 m-0 p-0 items-center;
 }
 
+/* Estilo de los enlaces del menú */
 .nav-link {
   @apply inline-block px-4 py-2 bg-blue-800 no-underline hover:bg-blue-900 font-bold hover:scale-105 transition-transform text-fontlight rounded-md;
 }
 
+/* Enlace activo (color rojo) */
 .active-link {
-  @apply outline outline-2 outline-black bg-green-900 text-bodydark hover:bg-red-700;
+  @apply outline outline-2 outline-black bg-red-700 text-white hover:bg-red-800;
 }
 </style>
