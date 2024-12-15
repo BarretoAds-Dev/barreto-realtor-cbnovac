@@ -5,7 +5,7 @@ import tailwind from '@astrojs/tailwind';
 import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig({
-  output: 'static',
+  output: 'server',
   adapter: cloudflare({
     imageService: 'cloudflare',
     platformProxy: { enabled: true },
