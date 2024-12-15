@@ -1,7 +1,7 @@
 ---
 import Metahead from '../layouts/Metahead.astro';
 import Menu from '../components/Menu.astro';
-
+import "remixicon/fonts/remixicon.css";
 
 interface Props {
   title: string;
@@ -46,6 +46,8 @@ const { title, description, url, image } = Astro.props;
     font-variation-settings: "wght" 400 800;
     lazy: "loading";
   }
+  
+
 
 	html, body {
 		@apply  flex-col m-0 p-0 box-border min-h-screen  w-screen antialiased bg-bodydark text-fontlight font-montserrat justify-center items-center ;
