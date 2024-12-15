@@ -16,6 +16,38 @@ export default defineConfig({
     }),
   ],
  
+  vite: {
+    build: {
+      minify: 'esbuild',
+      cssCodeSplit: true,
+      rollupOptions: {
+        treeshake: {
+          moduleSideEffects: false,
+        },
+      },
+    },
   
+  plugins: [
+    viteCompression({
+      algorithm: 'brotliCompress',
+      ext: '.br',
+      threshold: 0,
+      deleteOriginFile: false,
+      compressionOptions: { level: 11 },
+      filter: /\.(js|mjs|json|css|html|svg|jsx|tsx|astro|txt|xml|mp4|webp|avif|png|jpe?g|gif)$/,
+      verbose: false,
+    }),
+    viteCompression({
+      algorithm: 'gzip',
+      ext: '.gz',
+      threshold: 0,
+      deleteOriginFile: false,
+      compressionOptions: { level: 9 },
+      filter: /\.(js|mjs|json|css|html|svg|jsx|tsx|astro|txt|xml|mp4|webp|avif|png|jpe?g|gif)$/,
+      verbose: false,
+    }),
+  ],
+  cacheDir: '.vite-cache',
+},
 
 });

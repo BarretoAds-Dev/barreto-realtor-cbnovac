@@ -12,8 +12,8 @@
     "cf-typegen": "wrangler types",
     "purge-cache": "node purgeCache.mjs",
     "s-build": "astro build",
-    "clean": "rm -rf dist .astro cache .vite && pnpm store prune && pnpm run purge-cache",
-    "build": "pnpm run clean && astro check && astro build && pnpm run github && pnpm run w-deploy"
+    "clean": "rm -rf dist .astro cache .vite && pnpm store prune",
+    "build": "pnpm run clean && astro check && astro build && pnpm run github && pnpm run w-deploy && pnpm run purge-cache"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
