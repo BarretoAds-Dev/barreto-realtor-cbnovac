@@ -1,38 +1,120 @@
 {
-    "profileData": {
-      "profileName": "Enmanuel Barreto",
-      "roleDescription": "Asesor inmobiliario en",
-      "locationTags": ["Ciudad de México", "Polanco"],
-      "onlineStatusText": "En Línea"
+  "profileData": {
+    "profileName": "Enmanuel Barreto",
+    "profileImage": "/images/profile-enmanuel-barreto.jpg",
+    "roleDescription": "Asesor Inmobiliario en CDMX | Especialista en Venta, Renta y Compra de Propiedades",
+    "locationTags": ["Ciudad de México", "CDMX", "Polanco", "Condesa", "Roma", "Santa Fe", "Coyoacán", "Del Valle"],
+    "onlineStatusText": "En línea"
+  },
+  "links": [
+    {
+      "url": "/",
+      "icon": "/icons/verified.svg",
+      "title": "Enmanuel Barreto",
+      "description": "Asesor Inmobiliario en CDMX | Especialista en Venta, Renta y Compra de Propiedades Coldwell Banker Novac"
     },
-    "links": [
-      {
-        "url": "https://www.coldwellbanker.com.mx/perfil-oficina/coldwell-banker-novac?idOficina=180",
-        "icon": "",
-        "title": "Coldwell Banker Novac",
-        "description": "Perfil de oficina en Coldwell Banker"
-      },
-      {
-        "url": "https://www.instagram.com/barreto.coldwellbanker/",
-        "icon": "/icons/instagram.svg",
-        "title": "Instagram",
-        "description": "Perfil de Instagram"
-      },
-      {
-        "url": "https://api.whatsapp.com/send?phone=5215526838286",
-        "icon": "/icons/whatsapp.svg",
-        "title": "WhatsApp",
-        "description": "Contacto por WhatsApp"
-      }
+    {
+      "url": "https://www.coldwellbanker.com.mx/perfil-oficina/coldwell-banker-novac?idOficina=180",
+      "icon": "/icons/coldwellbanker.svg",
+      "title": "Coldwell Banker Novac",
+      "description": "Explora mi perfil en Coldwell Banker y descubre cómo puedo ayudarte a encontrar propiedades exclusivas en CDMX."
+    },
+    {
+      "url": "https://www.instagram.com/barreto.coldwellbanker/",
+      "icon": "/icons/instagram.svg",
+      "title": "Instagram",
+      "description": "Descubre propiedades de lujo y consejos inmobiliarios en CDMX a través de mi Instagram."
+    },
+    {
+      "url": "https://api.whatsapp.com/send?phone=5215526838286",
+      "icon": "/icons/whatsapp.svg",
+      "title": "WhatsApp",
+      "description": "Contáctame por WhatsApp para asesoría personalizada sobre propiedades en CDMX."
+    },
+    {
+      "url": "https://www.facebook.com/barreto.coldwellbanker/",
+      "icon": "/icons/facebook.svg",
+      "title": "Facebook",
+      "description": "Sigue mis publicaciones sobre oportunidades inmobiliarias en toda la CDMX."
+    },
+    {
+      "url": "https://www.linkedin.com/in/enmanuel-barreto-inmobiliario",
+      "icon": "/icons/linkedin.svg",
+      "title": "LinkedIn",
+      "description": "Conoce más sobre mi trayectoria profesional en LinkedIn y conecta conmigo para tus necesidades inmobiliarias."
+    },
+    {
+      "url": "https://www.tiktok.com/@barreto_inmobiliario",
+      "icon": "/icons/tiktok.svg",
+      "title": "TikTok",
+      "description": "Mira videos de tips inmobiliarios y propiedades en TikTok."
+    }
+ 
+  ],
+  "stats": [
+    { "label": "Años de Experiencia en Bienes Raíces", "value": "10+" },
+    { "label": "Clientes Satisfechos", "value": "100+" },
+    { "label": "Propiedades Gestionadas", "value": "150+" },
+    { "label": "Colonias Cubiertas", "value": "50+" },
+    { "label": "Tiempo Promedio de Venta", "value": "30 días" }
+  ],
+  "description": [
+    "Soy Enmanuel Barreto, asesor inmobiliario líder en la Ciudad de México, especializado en la compra, venta y renta de propiedades residenciales y comerciales. Trabajo en las zonas más exclusivas de CDMX como Polanco, Condesa, Roma, Santa Fe, Coyoacán, Del Valle y más.",
+    "Con más de 10 años de experiencia, ayudo a mis clientes a encontrar su propiedad ideal o a maximizar el valor de su inversión inmobiliaria. Mi enfoque es proporcionar una experiencia personalizada y sin complicaciones, garantizando resultados rápidos y efectivos."
+  ],
+  "services": [
+    "Compra de propiedades residenciales y comerciales en CDMX",
+    "Venta de propiedades con estrategias de marketing digital avanzadas",
+    "Renta de departamentos y casas en zonas exclusivas de la Ciudad de México",
+    "Asesoría personalizada en bienes raíces para inversores",
+    "Análisis de mercado para determinar el valor óptimo de tu propiedad"
+  ],
+  "seoTags": {
+    "metaTitle": "Enmanuel Barreto | Asesor Inmobiliario en CDMX | Compra, Venta y Renta de Propiedades",
+    "metaDescription": "Encuentra las mejores propiedades en la Ciudad de México con Enmanuel Barreto, asesor inmobiliario con 10+ años de experiencia. Especialista en compra, venta y renta en Polanco, Roma, Condesa, Santa Fe y más.",
+    "keywords": [
+      "asesor inmobiliario CDMX",
+      "propiedades en Ciudad de México",
+      "venta de casas en CDMX",
+      "renta de departamentos en Polanco",
+      "compra de propiedades en Condesa",
+      "Coldwell Banker Novac",
+      "propiedades exclusivas en CDMX",
+      "asesoría inmobiliaria CDMX"
     ],
-    "stats": [
-      { "label": "Años de experiencia", "value": "10+" },
-      { "label": "Clientes felices", "value": "50+" },
-      { "label": "Propiedades gestionadas", "value": "100+" }
-    ],
-    "description": [
-      "Te ayudo a comprar, vender o rentar propiedades en Ciudad de México y Polanco. Contáctame para encontrar tu propiedad perfecta." 
-    ]
-  }
-  
-
+    "localBusinessSchema": {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Enmanuel Barreto",
+      "image": "/images/profile-enmanuel-barreto.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad de México",
+        "addressRegion": "CDMX",
+        "postalCode": "11560",
+        "streetAddress": "Polanco, Ciudad de México"
+      },
+      "areaServed": "Ciudad de México",
+      "telephone": "+52 1 5526838286",
+      "url": "https://www.coldwellbanker.com.mx/perfil-oficina/coldwell-banker-novac?idOficina=180",
+      "sameAs": [
+        "https://www.instagram.com/barreto.coldwellbanker/",
+        "https://www.facebook.com/enmanuelbarreto",
+        "https://www.linkedin.com/in/enmanuel-barreto-inmobiliario",
+        "https://www.tiktok.com/@barreto_inmobiliario"
+      ]
+    }
+  },
+  "testimonials": [
+    {
+      "name": "María López",
+      "feedback": "Gracias a Enmanuel encontré el departamento perfecto en Polanco. Su profesionalismo y atención personalizada hicieron toda la diferencia.",
+      "rating": 5
+    },
+    {
+      "name": "Carlos Hernández",
+      "feedback": "Vendí mi casa en la Condesa en tiempo récord gracias a las estrategias de marketing de Enmanuel. ¡Altamente recomendado!",
+      "rating": 5
+    }
+  ]
+}

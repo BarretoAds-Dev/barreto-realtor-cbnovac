@@ -11,67 +11,31 @@ const { profileData, links, stats, description } = userData;
 <article class="grid gap-4 w-[375px] bg-gray-800 p-4 border-solid border-4  border-blue-700 rounded-md place-items-center">
 
   
-
-    <!-- Perfil -->
-      <!-- <figure class="m-0 p-0 w-24 h-24 rounded-full overflow-hidden border-solid border-2 border-white bg-green-500">
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          width="auto"
-          height="auto"
-          poster={profilePlaceholder} 
-          class="w-full h-full object-cover aspect-video lazy-video"
-          aria-label={`${profileData.profileName} video de perfil`}
-          >
-          <source src={profileVideo} type="video/mp4" />
-        </video>
-      </figure> -->
-
-         <!-- Status -->
+         <!-- Status en línea -->
       <div class="flex justify-center items-center gap-2 bg-black text-gray-400 text-xs italic py-2 px-4 rounded-full">
         <span class="h-2 w-2 bg-green-400 rounded-full animate-pulse"></span>
         <span>{profileData.onlineStatusText}</span>
       </div>
     </div>
 
-    
-
-    <!-- Name and Role -->
-    <div class="flex flex-col  gap-2 justify-center items-center w-full text-center  ">
-      <h1 class="text-2xl">{profileData.profileName}</h1>
-      <p class="text-sm">
-        {profileData.roleDescription}
-          {links[0].title}
-        </a>
-      </p>
-    </div>
-
-    <!-- Location Tags -->
-    <div class="w-full grid grid-cols-2 gap-2">
-      {profileData.locationTags.map((tag) => (
-        <span
-          class="text-sm bg-gray-700 py-2 px-4 rounded-lg text-center text-gray-300"
-        >
-          {tag}
-        </span>
+     <!-- Profile Name & Description -->
+     <div class="w-full grid grid-cols-1 place-content-center gap-2">
+      {links.slice(0, 1).map((link) => (
+        <h1
+          class="flex justify-center items-center gap-2 text-2xl text-center  hover:bg-gray-600 rounded-lg transition-colors duration-300"
+        >{link.title} <img src={link.icon} alt={`${link.title} icon`} 
+        class="w-5 h-5" /></h1>
+        <span>{link.description}</span>
       ))}
     </div>
 
-    <!-- Description -->
-    <div class="w-full">
-      {description.map((line) => (
-        <p>{line}</p>
-      ))}
-    </div>
 
-    <!-- Links -->
+    <!-- Btn Instagran & WhatsApp -->
     <div class="w-full grid grid-cols-2 gap-2 place-content-center">
-      {links.slice(1).map((link) => (
+      {links.slice(2, 4).map((link) => (
         <a
           href={link.url}
-          class="flex justify-center items-center gap-2 py-2 px-4 bg-gray-700 text-sm text-center text-gray-300 hover:bg-gray-600 rounded-lg transition-colors duration-300"
+          class="flex justify-center items-center gap-2 py-2 px-4 bg-gray-700 text-sm text-center  hover:bg-gray-600 rounded-lg transition-colors duration-300"
           aria-label={link.description}
           target="_blank"
           rel="noopener noreferrer"
@@ -83,14 +47,173 @@ const { profileData, links, stats, description } = userData;
       ))}
     </div>
 
-    <!-- Stats -->
-    <div class="grid grid-cols-3 gap-4 place-items-center  w-full">
-      {stats.map((stat) => (
-        <div class=" flex flex-col justify-center text-center max-w-[100px] ">
-          <strong class="text-xl font-bold">{stat.value}</strong>
-          <span class="text-sm text-gray-400">{stat.label}</span>
-        </div>
+
+    <!-- Location Tags -->
+    <div class="flex flex-col">
+      <h2 class="text-lg text-center font-normal">
+        -{profileData.locationTags[0]}-
+      </h2>
+      <div>
+        {profileData.locationTags.slice(1).map((tag) => (
+          <h2
+            class="inline-flex  p-1 text-xs font-normal italic text-center text-gray-300 m-0"
+          >
+            -{tag}-
+          </h2>
+        ))}
+      </div>
+    </div>
+
+
+<!-- Btn Redes -->
+    <div class="flex flex-row justify-center items-center gap-2">
+      {links.slice(4).map((link) => {
+        const hoverColor = {
+          Facebook: 'hover:bg-gray-700',
+          LinkedIn: 'hover:bg-blue-600',
+          TikTok: 'hover:bg-black',
+        } as const;
+    
+        const hoverClass = hoverColor[link.title as keyof typeof hoverColor] || '';
+    
+        return (
+          <a
+            href={link.url}
+            class={`flex justify-center items-center p-2 bg-black rounded-full transition-colors duration-300 ${hoverClass}`}
+            aria-label={link.description}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={link.icon} alt={`${link.title} icon`} class="w-5 h-5" />
+          </a>
+        );
+      })}
+    </div>
+    
+
+
+       <!-- Btn Instagran & WhatsApp -->
+    <div class="w-full grid grid-cols-2 gap-2 place-content-center">
+      {links.slice(2, 4).map((link, index) => (
+        <a
+          href={link.url}
+          class="flex justify-center items-center gap-2 py-2 px-4 bg-gray-700 text-center hover:bg-gray-600 rounded-lg transition-colors duration-300"
+          aria-label={link.description}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={link.icon}
+            alt={`${link.title} icon`}
+            class={`w-4 h-4 p-1 rounded-full z-10 ${
+              index === 0 ? 'glow-icon' : 'glow-icon-alt'
+            }`}
+          />
+          <span class={`${index === 0 ? 'glow-text' : 'glow-text-alt'}`}>
+            {link.title}
+          </span>
+        </a>
       ))}
     </div>
+    
+    
+    
+
+
 </article>
 
+<style>
+/* Efecto para el primer enlace (glow-icon y glow-text) */
+.glow-text {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(90deg, #ff007f, #ffffff, #0073ff, #ff007f);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: glow-animation 5s linear infinite;
+}
+
+@keyframes glow-animation {
+  0% {
+    background-position: 200% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}
+
+.glow-icon {
+  mask-image: linear-gradient(90deg, #ff007f, #ffffff, #0073ff, #ff007f);
+  -webkit-mask-image: linear-gradient(90deg, #ff007f, #ffffff, #0073ff, #ff007f);
+  mask-size: 200% 200%;
+  -webkit-mask-size: 200% 200%;
+  animation: glow-icon-animation 5s linear infinite;
+  background: linear-gradient(90deg, #ff007f, #ffffff, #0073ff, #ff007f);
+  background-size: 200% 200%;
+}
+
+@keyframes glow-icon-animation {
+  0% {
+    background-position: 200% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}
+
+/* Efecto para el segundo enlace (glow-icon-alt y glow-text-alt) */
+.glow-text-alt {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(90deg, #00ff00, #ffffff, #ffffff, #00ff00);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: glow-animation-alt 4s linear infinite;
+}
+
+@keyframes glow-animation-alt {
+  0% {
+    background-position: 200% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}
+
+.glow-icon-alt {
+  mask-image: linear-gradient(90deg, #00ff00, #ffffff, #fbfbfb, #00ff00);
+  -webkit-mask-image: linear-gradient(90deg, #00ff00, #ffffff, #fbfbfb, #00ff00);
+  mask-size: 200% 200%;
+  -webkit-mask-size: 200% 200%;
+  animation: glow-icon-animation-alt 5s linear infinite;
+  background: linear-gradient(90deg, #00ff00, #ffffff, #fbfbfb, #00ff00);
+  background-size: 200% 200%;
+}
+
+@keyframes glow-icon-animation-alt {
+  0% {
+    background-position: 200% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+
+</style>
