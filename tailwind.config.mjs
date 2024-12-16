@@ -17,4 +17,13 @@ export default {
 		preflight: false, 
 	},
 	plugins: [],
+	purge: {
+		content: ['./src/**/*.{js,ts,jsx,tsx,html,astro}'],
+		safelist: [
+		  'glow-icon',
+		  'glow-icon-alt',
+		  'glow-text',
+		  'glow-text-alt',
+		],
+	  },
 };

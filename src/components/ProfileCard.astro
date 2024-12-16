@@ -30,22 +30,29 @@ const { profileData, links, stats, description } = userData;
     </div>
 
 
-    <!-- Btn Instagran & WhatsApp -->
-    <div class="w-full grid grid-cols-2 gap-2 place-content-center">
-      {links.slice(2, 4).map((link) => (
-        <a
-          href={link.url}
-          class="flex justify-center items-center gap-2 py-2 px-4 bg-gray-700 text-sm text-center  hover:bg-gray-600 rounded-lg transition-colors duration-300"
-          aria-label={link.description}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={link.icon} alt={`${link.title} icon`} 
-          class="w-5 h-5" />
-          <span>{link.title}</span>
-        </a>
-      ))}
-    </div>
+      <!-- Btn Instagran & WhatsApp -->
+      <div class="w-full grid grid-cols-2 gap-2 place-content-center">
+        {links.slice(2, 4).map((link, index) => (
+          <a
+            href={link.url}
+            class="flex justify-center items-center gap-1 py-2 px-4 bg-gray-700 text-center hover:bg-gray-600 rounded-lg transition-colors duration-300"
+            aria-label={link.description}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={link.icon}
+              alt={`${link.title} icon`}
+              class={`w-4 h-4 p-1 rounded-full z-10 ${
+                index === 0 ? 'glow-icon' : 'glow-icon-alt'
+              }`}
+            />
+            <span class={`${index === 0 ? 'glow-text' : 'glow-text-alt'}`}>
+              {link.title}
+            </span>
+          </a>
+        ))}
+      </div>
 
 
     <!-- Location Tags -->
@@ -92,29 +99,7 @@ const { profileData, links, stats, description } = userData;
     
 
 
-       <!-- Btn Instagran & WhatsApp -->
-    <div class="w-full grid grid-cols-2 gap-2 place-content-center">
-      {links.slice(2, 4).map((link, index) => (
-        <a
-          href={link.url}
-          class="flex justify-center items-center gap-2 py-2 px-4 bg-gray-700 text-center hover:bg-gray-600 rounded-lg transition-colors duration-300"
-          aria-label={link.description}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={link.icon}
-            alt={`${link.title} icon`}
-            class={`w-4 h-4 p-1 rounded-full z-10 ${
-              index === 0 ? 'glow-icon' : 'glow-icon-alt'
-            }`}
-          />
-          <span class={`${index === 0 ? 'glow-text' : 'glow-text-alt'}`}>
-            {link.title}
-          </span>
-        </a>
-      ))}
-    </div>
+     
     
     
     
@@ -193,27 +178,8 @@ const { profileData, links, stats, description } = userData;
   }
 }
 
-.glow-icon-alt {
-  mask-image: linear-gradient(90deg, #00ff00, #ffffff, #fbfbfb, #00ff00);
-  -webkit-mask-image: linear-gradient(90deg, #00ff00, #ffffff, #fbfbfb, #00ff00);
-  mask-size: 200% 200%;
-  -webkit-mask-size: 200% 200%;
-  animation: glow-icon-animation-alt 5s linear infinite;
-  background: linear-gradient(90deg, #00ff00, #ffffff, #fbfbfb, #00ff00);
-  background-size: 200% 200%;
-}
 
-@keyframes glow-icon-animation-alt {
-  0% {
-    background-position: 200% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
+
 
 
 </style>
