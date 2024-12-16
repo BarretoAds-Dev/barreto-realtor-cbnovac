@@ -14,7 +14,7 @@ const { profileData, links, stats, description } = userData;
 
     <!-- Perfil Optimizado -->
     <figure
-    class="w-24 h-24 bg-green-400 rounded-full overflow-hidden border-2 border-solid relative bg-[url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...')] bg-cover bg-center p-0 m-0"
+    class="w-24 h-24 bg-green-400 rounded-full overflow-hidden border-2 border-solid relative bg-[url('data:{profilePlaceholder}')] bg-cover bg-center p-0 m-0"
     aria-label="Perfil de {{profileData.profileName}}"
   >
     <video
@@ -68,7 +68,7 @@ const { profileData, links, stats, description } = userData;
         {links.slice(2, 4).map((link, index) => (
           <a
             href={link.url}
-            class="flex justify-center items-center gap-1 py-2 px-4 bg-gray-700 text-center hover:bg-gray-600 rounded-lg transition-colors duration-300 text-xs"
+            class="flex justify-center items-center gap-2 py-2 px-4 bg-gray-700 text-sm text-center hover:bg-gray-600 rounded-lg transition-colors duration-300"
             aria-label={link.description}
             target="_blank"
             rel="noopener noreferrer"
@@ -76,12 +76,17 @@ const { profileData, links, stats, description } = userData;
             <img
               src={link.icon}
               alt={`${link.title} icon`}
-              class={`w-4 h-4` }
+              class={`w-4 h-4 p-[0.1rem] rounded-full z-10 ${
+                index === 0 ? 'glow-icon' : 'glow-icon-alt'
+              }`}
             />
+            <span class={`${index === 0 ? 'glow-text font-bold text-xs text-transparent' : 'glow-text-alt font-bold text-xs text-transparent'}`}>
               {link.title}
+            </span>
           </a>
         ))}
       </div>
+   
 
 
     <!-- Location Tags -->
@@ -105,7 +110,7 @@ const { profileData, links, stats, description } = userData;
     <div class="flex flex-row justify-center items-center gap-2">
       {links.slice(4).map((link) => {
         const hoverColor = {
-          Facebook: 'hover:bg-gray-700',
+          Facebook: 'hover:bg-blue-600',
           LinkedIn: 'hover:bg-blue-600',
           TikTok: 'hover:bg-black',
         } as const;
@@ -126,8 +131,36 @@ const { profileData, links, stats, description } = userData;
       })}
     </div>
     
-</article>
 
+
+
+
+
+
+
+
+
+
+    <div class="w-full grid grid-cols-2 gap-2 place-content-center ">
+      {links.slice(2, 4).map((link, index) => (
+        <a
+          href={link.url}
+          class="flex justify-center items-center gap-1 py-2 px-4 bg-gray-700 text-center hover:bg-gray-600 rounded-lg transition-colors duration-300 text-xs btn"
+          aria-label={link.description}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={link.icon}
+            alt={`${link.title} icon`}
+            class={`w-4 h-4` }
+          />
+            {link.title}
+        </a>
+      ))}
+    </div>
+   
+</article>
 
 
 

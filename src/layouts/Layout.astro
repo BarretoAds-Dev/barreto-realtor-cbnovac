@@ -70,24 +70,70 @@ h1, h2, h3, h4, h5, h6, p, li, a  {
 scrollbar-width: none; /* For Firefox */
 -ms-overflow-style: none; /* For IE/Edge */
 	 
-/* Efecto para el segundo enlace (glow-icon-alt y glow-text-alt) */
-.glow-text-alt {
-  background: linear-gradient(90deg, #00ff00, #ffffff, #ffffff, #00ff00);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: glow-animation-alt 4s linear infinite;
-}
 
-@keyframes glow-animation-alt {
-  0% {
-    background-position: 200% 0%;
+
+
+
+
+
+/* General link styles */
+a {
+    text-decoration: none;
   }
-  50% {
-    background-position: 100% 100%;
+
+  /* Glow effect for the first link (glow-icon and glow-text) */
+  .glow-text {
+    background: linear-gradient(90deg, #ff007f, #ffffff, #ffffff, #ff007f);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: glow-animation 4s linear infinite;
   }
-  100% {
-    background-position: -200% 0%;
+
+  @keyframes glow-animation {
+    0% {
+      background-position: 100% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: -100% 0%;
+    }
   }
-}
+
+  .glow-icon {
+    
+    background: linear-gradient(90deg, #ff007f, #ff007f);
+  
+  }
+
+ 
+
+  /* Glow effect for the second link (glow-icon-alt and glow-text-alt) */
+  .glow-text-alt {
+    background: linear-gradient(90deg, #00ff00, #ffffff, #ffffff, #00ff00);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: glow-animation-alt 4s linear infinite;
+  }
+
+  @keyframes glow-animation-alt {
+    0% {
+      background-position: 100% 0%;
+    }
+    50% {
+      background-position: 200% 200%;
+    }
+    100% {
+      background-position: -100% 0%;
+    }
+  }
+
+  .glow-icon-alt {
+    background: linear-gradient(90deg, #00ff00,  #00ff00);
+  }
+
+  
 </style>
