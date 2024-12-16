@@ -48,6 +48,24 @@
       "icon": "/icons/tiktok.svg",
       "title": "TikTok",
       "description": "Mira videos de tips inmobiliarios y propiedades en TikTok."
+    },
+    {
+      "url": "https://api.whatsapp.com/send?phone=5215526838286",
+      "icon": "/icons/asesoria.svg",
+      "title": "Asesoría Gratuita",
+      "description": "Agenda una asesoría gratuita con un experto inmobiliario."
+    },
+    {
+      "url": "https://api.whatsapp.com/send?phone=5215526838286",
+      "icon": "/icons/propiedades.svg",
+      "title": "¿Quieres vender o rentar tu propiedad?",
+      "description": "Explora las propiedades en venta en nuestra cartera inmobiliaria."
+    },
+    {
+      "url": "https://api.whatsapp.com/send?phone=5215526838286",
+      "icon": "/icons/blog.svg",
+      "title": "¿Buscas comprar o rentar?",
+      "description": "Lee artículos con consejos y tendencias del mercado inmobiliario."
     }
  
   ],

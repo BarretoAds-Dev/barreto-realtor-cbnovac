@@ -136,25 +136,25 @@ const { profileData, links, stats, description } = userData;
 
 
 
-
-    <!-- <div class="w-full grid grid-cols-1 gap-2 place-content-center ">
-      {links.slice(0).map((link, index) => (
+ <!-- Btn Links -->
+    <div class="w-full grid grid-cols-1 gap-2 place-content-center ">
+      {links.slice(7,10).map((link, index) => (
         <a
           href={link.url}
-          class="flex justify-center items-center gap-1 py-2 px-4 bg-gray-700 text-center hover:bg-gray-600 rounded-lg transition-colors duration-300 text-xs btn"
+          class="flex justify-center items-center gap-2 py-4 px-4 bg-black text-center hover:bg-gray-600 rounded-lg transition-colors duration-300 text-sm  border-s-blue-500 border-solid border-t-0 border-b-0 border-e-0"
           aria-label={link.description}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          {/* <img
             src={link.icon}
             alt={`${link.title} icon`}
             class={`w-4 h-4` }
-          />
+          /> */}
             {link.title}
         </a>
       ))}
-    </div> -->
+    </div>
    
 </article>
 
