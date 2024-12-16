@@ -43,11 +43,9 @@ const { profileData, links, stats, description } = userData;
             <img
               src={link.icon}
               alt={`${link.title} icon`}
-              class={`w-4 h-4 p-1 rounded-full z-10 ${
-                index === 0 ? 'glow-icon' : 'glow-icon-alt'
-              }`}
+              class={`w-4 h-4` }
             />
-            <span class={`${index === 0 ? 'glow-text' : 'glow-text-alt'}`}>
+            <span class={`${index === 0 ? 'glow-text font-bold text-xs ' : 'glow-text-alt text-transparent font-bold text-xs'}`}>
               {link.title}
             </span>
           </a>
@@ -107,11 +105,29 @@ const { profileData, links, stats, description } = userData;
 
 </article>
 
-<style>
+<style is:inline>
 
 
 
+/* Efecto para el segundo enlace (glow-icon-alt y glow-text-alt) */
+.glow-text-alt {
+  background: linear-gradient(90deg, #00ff00, #ffffff, #ffffff, #00ff00);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: glow-animation-alt 4s linear infinite;
+}
 
-
+@keyframes glow-animation-alt {
+  0% {
+    background-position: 200% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}
 
 </style>
