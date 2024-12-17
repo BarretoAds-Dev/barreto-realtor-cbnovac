@@ -9,3 +9,14 @@ mode = "smart"
 account_id = "CLOUDFLARE_ACCOUNT_ID"
 zone_id = "CLOUDFLARE_ZONE_ID"
 
+
+
+[[r2_buckets]]
+binding = "BarretoDev"          
+# Nombre de la variable que usarás en tu código
+
+bucket_name = "videos-img"     
+# Nombre del bucket creado en R2
+
+preview_bucket_name = "videos-img"  
+# Opcional: para el entorno de desarrollo
