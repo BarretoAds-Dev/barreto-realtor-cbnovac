@@ -13,9 +13,9 @@ const { profileData, links, stats, description } = userData;
   
 
     <!-- Perfil Optimizado -->
-    <figure
+    <!-- <figure
     class="w-24 h-24 bg-green-400 rounded-full overflow-hidden border-2 border-solid relative bg-[url('data:{profilePlaceholder}')] bg-cover bg-center p-0 m-0"
-    aria-label="Perfil de {{profileData.profileName}}"
+    aria-label="Perfil de {profileData.profileName}"
   >
     <video
       autoplay
@@ -24,14 +24,13 @@ const { profileData, links, stats, description } = userData;
       playsinline
       preload="auto"
       class="w-full h-full object-cover aspect-video"
-      aria-label="Video de perfil de {{profileData.profileName}}"
+      aria-label="Video de perfil de {profileData.profileName}"
       oncanplaythrough="this.parentElement.style.backgroundImage = 'none';"
     >
-      <source src="{{profileVideo}}" type="video/mp4" />
-      <!-- Fallback content in case the video cannot be played -->
-      Tu navegador no soporta la reproducción de videos.
+      <source src="{profileVideo}" type="video/mp4" />
+    
     </video>
-  </figure>
+  </figure> -->
 
 
 
