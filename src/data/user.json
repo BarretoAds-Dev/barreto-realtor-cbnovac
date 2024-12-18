@@ -1,8 +1,16 @@
 {
   "profileData": {
     "profileName": "Enmanuel Barreto",
-    "profileImage": "/images/profile-enmanuel-barreto.jpg",
-    "roleDescription": "Asesor Inmobiliario en CDMX | Especialista en Venta, Renta y Compra de Propiedades",
+    "profileImage": {
+      "src": "https://media.barretoads.dev/Barreto%20-%20Asesor-Inmobiliario-CDMX-MX-CBNovac.webp",
+      "alt": "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX"
+    },
+    "profileVideo": {
+      "src": "https://media.barretoads.dev/2-beneficios-trabajar-con-equipo-barreto-asesorinmobiliario-bienes-raices-CDMX-2023.mp4",
+      "placeholder": "https://media.barretoads.dev/Barreto%20-%20Asesor-Inmobiliario-CDMX-MX-CBNovac.webp",
+      "description": "Video de presentación de Enmanuel Barreto explicando los beneficios de trabajar con su equipo en CDMX."
+    },
+    "roleDescription": "Asesor Inmobiliario en CDMX | Especialista en Venta, Renta y Compra de Propiedades en zonas exclusivas.",
     "locationTags": ["Ciudad de México", "CDMX", "Polanco", "Condesa", "Roma", "Santa Fe", "Coyoacán", "Del Valle"],
     "onlineStatusText": "En línea"
   },
@@ -11,7 +19,7 @@
       "url": "/",
       "icon": "/icons/verified.svg",
       "title": "Enmanuel Barreto",
-      "description": "Asesor Inmobiliario en CDMX | Especialista en Venta, Renta y Compra de Propiedades Coldwell Banker Novac"
+      "description": "Asesor Inmobiliario en CDMX | Especialista en Venta, Renta y Compra de Propiedades, Coldwell Banker Novac."
     },
     {
       "url": "https://www.coldwellbanker.com.mx/perfil-oficina/coldwell-banker-novac?idOficina=180",
@@ -57,17 +65,18 @@
     },
     {
       "url": "https://api.whatsapp.com/send?phone=5215526838286",
-      "icon": "/icons/propiedades.svg",
-      "title": "¿Quieres vender o rentar tu propiedad?",
-      "description": "Explora las propiedades en venta en nuestra cartera inmobiliaria."
-    },
-    {
-      "url": "https://api.whatsapp.com/send?phone=5215526838286",
       "icon": "/icons/blog.svg",
       "title": "¿Buscas comprar o rentar?",
       "description": "Lee artículos con consejos y tendencias del mercado inmobiliario."
+    },
+    {
+      "url": "https://api.whatsapp.com/send?phone=5215526838286",
+      "icon": "/icons/propiedades.svg",
+      "title": "¿Quieres vender o rentar tu propiedad?",
+      "description": "Explora las propiedades en venta en nuestra cartera inmobiliaria."
     }
- 
+    
+
   ],
   "stats": [
     { "label": "Años de Experiencia en Bienes Raíces", "value": "10+" },

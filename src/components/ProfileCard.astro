@@ -1,10 +1,6 @@
 ---
 import userData from "../data/user.json";
 
-
-const profileVideo = "https://media.barretoads.dev/2-beneficios-trabajar-con-equipo-barreto-asesorinmobiliario-bienes-raices-CDMX-2023.mp4";
-const profilePlaceholder = "https://media.barretoads.dev/Barreto%20-%20Asesor-Inmobiliario-CDMX-MX-CBNovac.webp";
-
 const { profileData, links, stats, description } = userData;
 ---
 
@@ -15,7 +11,7 @@ const { profileData, links, stats, description } = userData;
    <!-- Perfil Optimizado -->
    <figure
    class="w-24 h-24 rounded-full overflow-hidden border-2 border-solid relative bg-cover bg-center p-0 m-0"
-   style={`background-image: url('${profilePlaceholder}');`}
+   style={`background-image: url('${profileData.profileVideo.placeholder}');`}
    aria-label="Perfil de {profileData.profileName}"
  >
    <video
@@ -29,7 +25,7 @@ const { profileData, links, stats, description } = userData;
      oncanplay="this.parentElement.style.backgroundImage = 'none';"
    >
      <source
-       src={profileVideo}
+       src={profileData.profileVideo.src}
        type="video/mp4"
      />
      Tu navegador no soporta videos en formato MP4.
@@ -46,11 +42,11 @@ const { profileData, links, stats, description } = userData;
      <!-- Profile Name & Description -->
      <div class="w-full grid grid-cols-1 place-content-center gap-2">
       {links.slice(0, 1).map((link) => (
-        <h1
-          class="flex justify-center items-center gap-2 text-2xl text-center"
+        <span
+          class="flex justify-center items-center gap-2 text-2xl text-center font-bold"
         >{link.title} <img src={link.icon} alt={`${link.title} icon`} 
-        class="w-5 h-5" /></h1>
-        <span>{link.description}</span>
+        class="w-5 h-5" /></span>
+        <h1 class="font-normal">{link.description}</h1>
       ))}
     </div>
 
@@ -105,7 +101,7 @@ const { profileData, links, stats, description } = userData;
         return (
           <a
             href={link.url}
-            class={`flex justify-center items-center p-2 bg-black rounded-full transition-colors duration-300 ${hoverClass}`}
+            class={`flex justify-center items-center p-2 bg-slate-700 rounded-full transition-colors duration-300 ${hoverClass}`}
             aria-label={link.description}
             target="_blank"
             rel="noopener noreferrer"
@@ -122,16 +118,12 @@ const { profileData, links, stats, description } = userData;
       {links.slice(7,10).map((link, index) => (
         <a
           href={link.url}
-          class="flex justify-center items-center gap-2 p-6 bg-black text-center hover:bg-gray-600 rounded-lg transition-colors duration-300 text-sm  border-s-blue-500 border-solid border-t-0 border-b-0 border-e-0"
+          class="flex justify-center items-center gap-2 p-6 bg-black text-center hover:bg-gray-600 rounded-lg transition-colors duration-300 text-sm  border-s-blue-500 border-solid border-t-0 border-b-0 border-e-0 font-bold"
           aria-label={link.description}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {/* <img
-            src={link.icon}
-            alt={`${link.title} icon`}
-            class={`w-4 h-4` }
-          /> */}
+          
             {link.title}
         </a>
       ))}
