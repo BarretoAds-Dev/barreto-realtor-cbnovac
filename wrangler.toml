@@ -11,3 +11,6 @@ zone_id = "CLOUDFLARE_ZONE_ID"
 
 
 
+
+[functions]
+directory = "functions" # Asegúrate de que Wrangler detecte el directorio
