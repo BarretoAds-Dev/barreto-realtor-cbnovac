@@ -1,39 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-  <ShortName>Barreto | Asesor Inmobiliario en CDMX. </ShortName>
-  <Description>Busca propiedades exclusivas en Ciudad de México con Enmanuel Barreto, asesor inmobiliario especialista en compra, venta y renta de inmuebles en zonas como Polanco, Condesa, Roma, Santa Fe y más.</Description>
-  <Tags>inmobiliario, bienes raíces, venta de casas, renta de departamentos, propiedades exclusivas, Ciudad de México, Polanco, Condesa, Roma Norte, Santa Fe, Coyoacán, Del Valle, asesor inmobiliario, inversión, CDMX</Tags>
+  <ShortName>Barreto Asesor Inmobiliario</ShortName>
+  <Description>Descubre propiedades exclusivas en Ciudad de México con Enmanuel Barreto, especialista en compra, venta y renta de departamentos y casas en Polanco, Condesa, Roma, Santa Fe, y más.</Description>
+  <Tags>inmobiliaria, bienes raíces, compra casas, renta departamentos, propiedades lujo, venta inmuebles, asesoría inmobiliaria, CDMX, Polanco, Condesa, Roma Norte, Santa Fe, Coyoacán, Del Valle, venta rápida, asesor en bienes raíces</Tags>
   <Contact>mailto:contacto@barretoads.dev</Contact>
-  <Url type="text/html" template="https://barretoads.dev/search?q={searchTerms}&amp;lang=es&amp;utm_source=opensearch"/>
-  <LongName>Barreto | Asesor Inmobiliario en CDMX - Venta, Renta y Compra de Propiedades en Zonas Exclusivas de CDMX</LongName>
+  <Url type="text/html" template="https://barretoads.dev/search?q={searchTerms}&amp;utm_source=opensearch"/>
+  <Url type="application/x-suggestions+json" template="https://barretoads.dev/sugerencias?q={searchTerms}&amp;utm_source=opensearch"/>
+  <LongName>Barreto | Asesor Experto en Compra, Venta y Renta de Propiedades en CDMX</LongName>
   <Developer>BarretoAds.Dev</Developer>
-  <Attribution>© 2024 BarretoAds.Dev. Todos los derechos reservados.</Attribution>
+  <Attribution>© 2024 BarretoAds.Dev</Attribution>
   <SyndicationRight>open</SyndicationRight>
   <AdultContent>false</AdultContent>
-  <Language>es-mx</Language>
-  <OutputEncoding>UTF-8</OutputEncoding>
+  <Language>es-MX</Language>
   <InputEncoding>UTF-8</InputEncoding>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <Image height="16" width="16" type="image/x-icon">https://barretoads.dev/favicon.ico</Image>
 
-  <!-- Frases de búsqueda comunes -->
-  <Query role="vendedor" searchTerms="propiedades en venta en Polanco, CDMX"/>
-  <Query role="arrendador" searchTerms="renta de departamentos en Condesa"/>
-  <Query role="vendedor" searchTerms="casas en venta en Roma Norte, CDMX"/>
-  <Query role="inversionista" searchTerms="inversión inmobiliaria en Santa Fe, Ciudad de México"/>
+  <!-- Consultas de búsqueda clave -->
+  <Query role="example" searchTerms="compra de departamentos en Polanco, CDMX"/>
+  <Query role="example" searchTerms="renta de departamentos de lujo en Condesa"/>
+  <Query role="example" searchTerms="casas familiares en venta en Roma Norte, CDMX"/>
+  <Query role="example" searchTerms="inversión inmobiliaria en Santa Fe, Ciudad de México"/>
+  <Query role="example" searchTerms="vender propiedad rápido en Polanco, CDMX"/>
+  <Query role="example" searchTerms="asesor para arrendar departamentos en Del Valle"/>
+  <Query role="example" searchTerms="propiedades exclusivas con seguridad 24/7 en Santa Fe"/>
+  <Query role="example" searchTerms="venta de casas con jardín en Coyoacán, CDMX"/>
+  <Query role="example" searchTerms="renta de inmuebles con home office en Roma Norte"/>
 
-  <!-- Frases de búsqueda con enfoque long-tail -->
-  <Query role="buscadores" searchTerms="propiedades exclusivas en Polanco, Ciudad de México"/>
-  <Query role="asesor" searchTerms="asesoría inmobiliaria en Coyoacán, CDMX"/>
-  <Query role="inmuebles" searchTerms="departamentos en renta para ejecutivos en Del Valle"/>
-  <Query role="casas" searchTerms="casas familiares en venta en Santa Fe, CDMX"/>
+  <!-- Parámetros dinámicos -->
+  <Param name="priceRange" value="{priceRange}" minInclusive="3000000" maxInclusive="100000000000000" title="Rango de precio (MXN)" />
+  <Param name="propertyType" value="{propertyType}" allowedValues="departamento,casa,comercial,bodega,terreno,edificios,bodega_industrial" title="Tipo de propiedad" />
+  <Param name="bedrooms" value="{bedrooms}" minInclusive="1" maxInclusive="100" title="Número de recámaras" />
+  <Param name="zone" value="{zone}" allowedValues="polanco,condesa,roma,santa_fe,coyoacan,del_valle,narvarte,irrigacion,nuevo_polanco,anzures,cdmx,ciudad_de_mexico" title="Zona de la propiedad" />
 
-  <!-- Búsqueda orientada a ubicaciones clave -->
-  <Query role="departamento" searchTerms="propiedades residenciales en venta en Roma Norte"/>
-  <Query role="inmobiliaria" searchTerms="asesor inmobiliario en Polanco, CDMX"/>
-  <Query role="inversiones inmobiliarias" searchTerms="mejor opción para invertir en propiedades en Santa Fe, CDMX"/>
-  <Query role="departamentos" searchTerms="departamentos de lujo en renta en Condesa"/>
-
-  <!-- Búsqueda orientada a servicios específicos -->
-  <Query role="marketing inmobiliario" searchTerms="estrategias de venta de propiedades exclusivas en CDMX"/>
-  <Query role="marketing" searchTerms="asesor inmobiliario para propiedades comerciales en Ciudad de México"/>
-  <Query role="publicidad" searchTerms="inversión en bienes raíces en zonas exclusivas de CDMX"/>
+  <!-- Ejemplos mejorados -->
+  <Examples>
+    <Example category="Compra">
+        <Query>comprar departamento en Polanco CDMX</Query>
+        <Keywords>comprar, departamento, polanco, cdmx</Keywords>
+        <Type>Departamento</Type>
+        <Features>Lujo, Ubicación Premium</Features>
+    </Example>
+    <Example category="Renta">
+        <Query>rentar departamento amueblado en Condesa</Query>
+        <Keywords>rentar, departamento, amueblado, condesa, cdmx</Keywords>
+        <Type>Departamento</Type>
+        <Features>Amueblado, Ubicación Céntrica</Features>
+    </Example>
+        <Example category="Venta">
+        <Query>vender casa con jardín en CDMX</Query>
+        <Keywords>vender, casa, jardín, cdmx</Keywords>
+        <Type>Casa</Type>
+        <Features>Jardín, Áreas Abiertas</Features>
+    </Example>
+    <Example category="Arrendamiento">
+        <Query>arrendar propiedad en Santa Fe</Query>
+        <Keywords>arrendar, propiedad, santa fe, cdmx</Keywords>
+        <Type>Casa/Departamento/Local</Type>
+        <Features>Ubicación, Inquilinos</Features>
+    </Example>
+    <Example category="Inversión">
+        <Query>inversión inmobiliaria en zonas de alta plusvalía CDMX</Query>
+        <Keywords>inversión, inmobiliaria, plusvalía, cdmx</Keywords>
+        <Type>Inversión</Type>
+        <Features>Alta Plusvalía, Retorno de Inversión</Features>
+    </Example>
+    <Example category="Asesoría">
+        <Query>asesoría para vender propiedades en Coyoacán</Query>
+        <Keywords>asesoría, vender, propiedades, coyoacán, cdmx</Keywords>
+        <Type>Asesoría</Type>
+        <Features>Venta, Trámites, Legalidad</Features>
+    </Example>
+    <Example category="Renta">
+        <Query>gestionar renta de departamentos con home office</Query>
+        <Keywords>gestionar, renta, departamentos, home office, cdmx</Keywords>
+        <Type>Departamento</Type>
+        <Features>Home Office, Inquilinos</Features>
+    </Example>
+    <Example category="Venta">
+        <Query>vender departamentos inteligentes en CDMX</Query>
+        <Keywords>vender, departamentos, inteligentes, tecnología, cdmx</Keywords>
+        <Type>Departamento</Type>
+        <Features>Domótica, Smart Home, Venta Rápida</Features>
+    </Example>
+    <Example category="Arrendamiento">
+        <Query>encontrar inquilinos para mi propiedad en Santa Fe</Query>
+        <Keywords>encontrar, inquilinos, propiedad, santa fe, cdmx</Keywords>
+        <Type>Casa/Departamento/Local</Type>
+        <Features>Arrendamiento, Inquilinos Calificados</Features>
+    </Example>
+</Examples>
 </OpenSearchDescription>
