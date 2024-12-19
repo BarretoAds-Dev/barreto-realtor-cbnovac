@@ -39,34 +39,34 @@ const { profileData, links, stats, description } = userData;
       </div>
     </div>
 
-     <!-- Profile Name & Description -->
-     <div class="w-full grid grid-cols-1 place-content-center gap-2">
-      {links.slice(0, 1).map((link) => (
-        <span
-          class="flex justify-center items-center gap-2 text-2xl text-center font-bold"
-        >{link.title} <img src={link.icon} alt={`${link.title} icon`} 
-        class="w-5 h-5" /></span>
-        <h1 class="font-normal">{link.description}</h1>
-      ))}
+<!-- Profile Name & Description -->
+<div class="w-full grid grid-cols-1 place-content-center gap-2">
+  {links.slice(0, 1).map((link) => (
+    <div class="flex flex-col items-center gap-2">
+      <span class="flex items-center gap-2 text-2xl text-center font-bold">
+        {link.title}
+        <span class="inline-flex w-5 h-5" set:html={link.icon}></span>
+      </span>
+      <h1 class="font-normal text-center">{link.description}</h1>
     </div>
+  ))}
+</div>
+
+
 
       <!-- Btn Instagran & WhatsApp -->
   <div class="w-full grid grid-cols-2 gap-2 place-content-center ">
       {links.slice(2, 4).map((link, index) => (
         <a
           href={link.url}
-          class="flex justify-center items-center gap-1 p-4 bg-slate-700 text-center hover:bg-gray-600 rounded-lg transition-colors duration-300 text-xs btn"
+          class="flex justify-center items-center gap-1 p-4 bg-slate-700 text-center hover:bg-gray-600 rounded-lg transition-colors duration-300 text-sm"
           aria-label={link.description}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            src={link.icon}
-            alt={`${link.title} icon`}
-            class={`w-4 h-4` }
-          />
-            {link.title}
-        </a>
+          <span class="w-5 h-5" set:html={link.icon}></span>
+      <span>{link.title}</span>
+    </a>
       ))}
     </div> 
    
@@ -106,8 +106,8 @@ const { profileData, links, stats, description } = userData;
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={link.icon} alt={`${link.title} icon`} class="w-5 h-5" />
-          </a>
+             <span class="w-5 h-5" set:html={link.icon}></span>
+    </a>
         );
       })}
     </div>

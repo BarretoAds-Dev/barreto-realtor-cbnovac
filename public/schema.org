@@ -1,0 +1,62 @@
+/********************************
+
+      HUMANOS DETRÁS DE ESTE SITIO
+
+********************************/
+
+  Desarrollado por: Enmanuel Barreto
+  Rol: Asesor Inmobiliario
+  Contacto: contacto@barretoads.dev
+  Sitio web: [https://barretoads.dev](https://barretoads.dev)
+
+/********************************
+
+        TECNOLOGÍAS Y HERRAMIENTAS
+
+********************************/
+
+  Plataforma: Astro Build
+  Lenguajes: HTML, CSS, TypeScript
+  Framework de Estilo: Tailwind CSS
+  Optimización de Imágenes: Cloudinary
+  Hosting: Cloudflare Pages
+  Gestor de Paquetes: pnpm
+  Herramientas de Desarrollo: Visual Studio Code, Git
+  Métricas de Rendimiento: Lighthouse, Web Vitals
+
+/********************************
+
+        REDES SOCIALES
+
+********************************/
+
+  Instagram: [@barreto.coldwellbanker](https://instagram.com/barreto.coldwellbanker)
+  Facebook: [https://facebook.com/barreto.coldwellbanker](https://facebook.com/barreto.coldwellbanker)
+  LinkedIn: [https://linkedin.com/in/enmanuel-barreto-inmobiliario](https://linkedin.com/in/enmanuel-barreto-inmobiliario)
+  TikTok: [https://tiktok.com/@barreto_inmobiliario](https://tiktok.com/@barreto_inmobiliario)
+  WhatsApp: [https://api.whatsapp.com/send?phone=5215526838286](https://api.whatsapp.com/send?phone=5215526838286)
+
+/********************************
+
+        MENSAJE ESPECIAL
+
+********************************/
+
+  "Dedicado a quienes buscan transformar espacios en hogares, inversiones en patrimonio y sueños en realidades."
+
+/********************************
+
+        CONTRIBUCIONES Y AGRADECIMIENTOS
+
+********************************/
+
+  Comunidad: Agradecimientos especiales a la comunidad de código abierto y a los equipos detrás de Astro Build, Tailwind CSS y Cloudflare Pages, por proporcionar herramientas innovadoras y accesibles.
+  Inspiración: Gracias a mis clientes y colaboradores, cuyo apoyo impulsa la innovación y la excelencia.
+
+/********************************
+
+        ACTUALIZACIONES
+
+********************************/
+
+  Última actualización: 2023-12-01

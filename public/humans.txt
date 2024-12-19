@@ -1,0 +1,13 @@
+/* TEAM */
+Team: Enmanuel Barreto
+Role: Asesor Inmobiliario
+Contact: contacto@barretoads.dev
+Website: https://barretoads.dev
+
+/* SITE */
+Last update: 2023-12-01
+Standards: Astro Build, Tailwindcss
+Hosting: Cloudflare
+
+/* THANKS */
+Thanks: barretoads.dev

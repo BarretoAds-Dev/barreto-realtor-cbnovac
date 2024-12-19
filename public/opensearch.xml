@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Barreto | Asesor Inmobiliario en CDMX. </ShortName>
+  <Description>Busca propiedades exclusivas en Ciudad de México con Enmanuel Barreto, asesor inmobiliario especialista en compra, venta y renta de inmuebles en zonas como Polanco, Condesa, Roma, Santa Fe y más.</Description>
+  <Tags>inmobiliario, bienes raíces, venta de casas, renta de departamentos, propiedades exclusivas, Ciudad de México, Polanco, Condesa, Roma Norte, Santa Fe, Coyoacán, Del Valle, asesor inmobiliario, inversión, CDMX</Tags>
+  <Contact>mailto:contacto@barretoads.dev</Contact>
+  <Url type="text/html" template="https://barretoads.dev/search?q={searchTerms}&amp;lang=es&amp;utm_source=opensearch"/>
+  <LongName>Barreto | Asesor Inmobiliario en CDMX - Venta, Renta y Compra de Propiedades en Zonas Exclusivas de CDMX</LongName>
+  <Developer>BarretoAds.Dev</Developer>
+  <Attribution>© 2024 BarretoAds.Dev. Todos los derechos reservados.</Attribution>
+  <SyndicationRight>open</SyndicationRight>
+  <AdultContent>false</AdultContent>
+  <Language>es-mx</Language>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <InputEncoding>UTF-8</InputEncoding>
+
+  <!-- Frases de búsqueda comunes -->
+  <Query role="vendedor" searchTerms="propiedades en venta en Polanco, CDMX"/>
+  <Query role="arrendador" searchTerms="renta de departamentos en Condesa"/>
+  <Query role="vendedor" searchTerms="casas en venta en Roma Norte, CDMX"/>
+  <Query role="inversionista" searchTerms="inversión inmobiliaria en Santa Fe, Ciudad de México"/>
+
+  <!-- Frases de búsqueda con enfoque long-tail -->
+  <Query role="buscadores" searchTerms="propiedades exclusivas en Polanco, Ciudad de México"/>
+  <Query role="asesor" searchTerms="asesoría inmobiliaria en Coyoacán, CDMX"/>
+  <Query role="inmuebles" searchTerms="departamentos en renta para ejecutivos en Del Valle"/>
+  <Query role="casas" searchTerms="casas familiares en venta en Santa Fe, CDMX"/>
+
+  <!-- Búsqueda orientada a ubicaciones clave -->
+  <Query role="departamento" searchTerms="propiedades residenciales en venta en Roma Norte"/>
+  <Query role="inmobiliaria" searchTerms="asesor inmobiliario en Polanco, CDMX"/>
+  <Query role="inversiones inmobiliarias" searchTerms="mejor opción para invertir en propiedades en Santa Fe, CDMX"/>
+  <Query role="departamentos" searchTerms="departamentos de lujo en renta en Condesa"/>
+
+  <!-- Búsqueda orientada a servicios específicos -->
+  <Query role="marketing inmobiliario" searchTerms="estrategias de venta de propiedades exclusivas en CDMX"/>
+  <Query role="marketing" searchTerms="asesor inmobiliario para propiedades comerciales en Ciudad de México"/>
+  <Query role="publicidad" searchTerms="inversión en bienes raíces en zonas exclusivas de CDMX"/>
+</OpenSearchDescription>
