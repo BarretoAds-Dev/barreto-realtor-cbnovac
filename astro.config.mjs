@@ -6,7 +6,11 @@ import viteCompression from 'vite-plugin-compression';
 import sitemap from '@astrojs/sitemap';
 
 
+
 export default defineConfig({
+  prefetch: {
+    defaultStrategy: 'viewport'
+  },
   site: 'https://barretoads.dev', 
   output: 'server',
   adapter: cloudflare({
