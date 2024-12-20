@@ -2,35 +2,40 @@
 import userData from "../data/user.json";
 
 const { profileData, links, stats, description } = userData;
+
 ---
 
 <article class="grid gap-4 p-4 rounded-md place-items-center">
 
   
 
-   <!-- Perfil Optimizado -->
-   <figure
-   class="w-24 h-24 rounded-full overflow-hidden border-2 border-solid relative bg-cover bg-center p-0 m-0"
-   style={`background-image: url('${profileData.profileVideo.placeholder}');`}
-   aria-label="Perfil de {profileData.profileName}"
- >
-   <video
-     autoplay
-     muted
-     loop
-     playsinline
-     preload="metadata"
-     class="w-full h-full object-cover aspect-auto"
-     aria-label="Video de perfil de {profileData.profileName}"
-     oncanplay="this.parentElement.style.backgroundImage = 'none';"
-   >
-     <source
-       src={profileData.profileVideo.src}
-       type="video/mp4"
-     />
-     Tu navegador no soporta videos en formato MP4.
-   </video>
- </figure>
+  <figure
+  class="w-24 h-24 rounded-full overflow-hidden border-2 border-solid relative bg-cover bg-center p-0 m-0"
+  style={{ backgroundImage: `url('${profileData.profileVideo.placeholder}')` }}
+  aria-label={`Perfil de ${profileData.profileName}`}
+>
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    class="w-full h-full object-cover aspect-auto"
+    aria-label={`Video de perfil de ${profileData.profileName}`}
+    oncanplay="this.parentElement.style.backgroundImage = 'none';"
+  >
+    <source
+      src={profileData.profileVideo.src}
+      type="video/mp4"
+    />
+    Tu navegador no soporta videos en formato MP4.
+  </video>
+</figure>
+ 
+ 
+ 
+ 
+ 
 
          <!-- Status en línea -->
       <div class="flex justify-center items-center gap-2 bg-black text-gray-400 text-xs italic py-2 px-4 rounded-full">

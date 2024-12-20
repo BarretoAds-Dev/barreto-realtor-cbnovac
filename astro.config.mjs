@@ -3,14 +3,23 @@ import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 import tailwind from '@astrojs/tailwind';
 import viteCompression from 'vite-plugin-compression';
+import sitemap from '@astrojs/sitemap';
+
 
 export default defineConfig({
+  site: 'https://barretoads.dev', 
   output: 'server',
   adapter: cloudflare({
     imageService: 'cloudflare',
     platformProxy: { enabled: true },
   }),
   integrations: [
+    sitemap({
+      filter: (page) => {
+        // Solo incluye rutas que provienen de src/pages
+        return !page.includes('/drafts/') && !page.includes('/private/');
+      },
+    }),
     tailwind({
       applyBaseStyles: false,
     }),
