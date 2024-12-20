@@ -7,49 +7,49 @@
     "@astrojs/react/client.js": {
       "src": "../../node_modules/.pnpm/@astrojs+react@4.1.1_@types+node@22.10.2_@types+react-dom@18.3.5_@types+react@18.3.18__@types_jrtlfkgpjca6skchecjvbzvll4/node_modules/@astrojs/react/client.js",
       "file": "@astrojs_react_client__js.js",
-      "fileHash": "30fc61be",
+      "fileHash": "3c58d8bb",
       "needsInterop": false
     },
     "react": {
       "src": "../../node_modules/.pnpm/react@18.3.1/node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "38d77369",
+      "fileHash": "170ce26f",
       "needsInterop": true
     },
     "react/jsx-runtime": {
       "src": "../../node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js",
       "file": "react_jsx-runtime.js",
-      "fileHash": "25bc9faa",
+      "fileHash": "f6e3eb88",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "97df66bd",
+      "fileHash": "a66d32da",
       "needsInterop": true
     },
     "react-dom": {
       "src": "../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/index.js",
       "file": "react-dom.js",
-      "fileHash": "d10a5bb8",
+      "fileHash": "59f943cd",
       "needsInterop": true
     },
     "astro > cssesc": {
       "src": "../../node_modules/.pnpm/cssesc@3.0.0/node_modules/cssesc/cssesc.js",
       "file": "astro___cssesc.js",
-      "fileHash": "740a1594",
+      "fileHash": "b15bfb44",
       "needsInterop": true
     },
     "astro > aria-query": {
       "src": "../../node_modules/.pnpm/aria-query@5.3.2/node_modules/aria-query/lib/index.js",
       "file": "astro___aria-query.js",
-      "fileHash": "ed5e80ea",
+      "fileHash": "70340198",
       "needsInterop": true
     },
     "astro > axobject-query": {
       "src": "../../node_modules/.pnpm/axobject-query@4.1.0/node_modules/axobject-query/lib/index.js",
       "file": "astro___axobject-query.js",
-      "fileHash": "50efcb3c",
+      "fileHash": "66c5033e",
       "needsInterop": true
     }
   },
