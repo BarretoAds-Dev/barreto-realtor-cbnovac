@@ -1,36 +1,84 @@
-# Permite acceso a todos los motores de búsqueda
+# Robots.txt optimizado para BarretoAds.dev
+
+# Reglas generales para todos los user-agents
 User-agent: *
-Disallow: /private/        # Bloquea contenido confidencial
-Disallow: /temp/           # Bloquea carpetas temporales o en construcción
-Disallow: /scripts/        # Bloquea scripts internos si no deben ser rastreados
-Disallow: /old-version/    # Bloquea versiones antiguas del sitio
+Disallow: /private/
+Disallow: /temp/
+Disallow: /scripts/
+Disallow: /old-version/
+Disallow: /cgi-bin/ # Bloquea directorios comunes de scripts de servidor
 
-# Evita el rastreo de parámetros de URL que no afectan el contenido
-Disallow: /*?utm_source$
-Disallow: /*?sessionid$
+# Bloqueo de parámetros de seguimiento innecesarios
+Disallow: /*?utm_*
+Disallow: /*?sessionid
+Disallow: /*&sessionid
 Disallow: /*?ref=
+Disallow: /*&ref=
+Disallow: /*?fbclid # Bloquea el seguimiento de Facebook
+Disallow: /*&fbclid
 
-# Permite el rastreo de JavaScript, CSS, e imágenes para evitar penalizaciones de Google
+# Permite el acceso a recursos necesarios para el renderizado
 Allow: /*.css$
 Allow: /*.js$
 Allow: /images/
-
-# Permite el rastreo de la API de Google Fonts y otros recursos necesarios
-User-agent: Googlebot
-Allow: /css/
 Allow: /fonts/
-Allow: /js/
-Allow: /*.woff2$
+Allow: /static/
+Allow: /videos/ # Permitir acceso a videos alojados en el dominio
+Allow: /*.mp4$ # Específicamente para archivos de video MP4
+Allow: /*.webm$ # Para videos en formato WebM
+Allow: /*.mov$ # Si se usa MOV como formato de video
 
-# Bloquea bots específicos conocidos por generar tráfico no deseado
-User-agent: BadBot
-Disallow: /
+# Especificaciones para motores de búsqueda principales
+User-agent: Googlebot
+Allow: /
 
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Googlebot-Video
+Allow: /videos/ # Acceso específico para videos
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Restricciones para bots menos relevantes o agresivos
 User-agent: AhrefsBot
+Crawl-delay: 10
 Disallow: /
 
 User-agent: SemrushBot
+Crawl-delay: 10
 Disallow: /
 
-# Especifica la ubicación del sitemap
+User-agent: MJ12bot
+Crawl-delay: 10
+Disallow: /
+
+User-agent: YandexBot
+Crawl-delay: 15
+Disallow: /
+
+# Bloqueo de otros bots agresivos conocidos
+User-agent: DotBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: Sogou
+Disallow: /
+
+# Sitemap para indexación eficiente
 Sitemap: https://barretoads.dev/sitemap.xml
+
+# Directiva opcional: Especificar el tiempo de rastreo (p.ej., para sitios con tráfico alto)
+Crawl-delay: 5
+
+# Mejoras en SEO: Permitir imágenes y videos importantes para indexación
+User-agent: *
+Allow: /images/properties/
+Allow: /images/logos/
+Allow: /videos/properties/ # Videos específicos relacionados con propiedades
