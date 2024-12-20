@@ -7,6 +7,10 @@ import sitemap from '@astrojs/sitemap';
 
 
 
+import react from '@astrojs/react';
+
+
+
 export default defineConfig({
   prefetch: {
     defaultStrategy: 'viewport'
@@ -17,17 +21,17 @@ export default defineConfig({
     imageService: 'cloudflare',
     platformProxy: { enabled: true },
   }),
-  integrations: [
-    sitemap({
-      filter: (page) => {
-        // Solo incluye rutas que provienen de src/pages
-        return !page.includes('/drafts/') && !page.includes('/private/');
-      },
-    }),
-    tailwind({
-      applyBaseStyles: false,
-    }),
-  ],
+  integrations: [sitemap({
+    filter: (page) => {
+      // Solo incluye rutas que provienen de src/pages
+      return !page.includes('/drafts/') && !page.includes('/private/');
+    },
+  }), tailwind({
+    applyBaseStyles: false,
+  }),  react({
+    include: ['**/react/*'],
+  }),
+],
  
   vite: {
     build: {
