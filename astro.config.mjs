@@ -4,9 +4,6 @@ import cloudflare from '@astrojs/cloudflare';
 import tailwind from '@astrojs/tailwind';
 import viteCompression from 'vite-plugin-compression';
 import sitemap from '@astrojs/sitemap';
-
-
-
 import react from '@astrojs/react';
 
 
