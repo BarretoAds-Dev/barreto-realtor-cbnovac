@@ -72,5 +72,33 @@ scrollbar-width: none; /* For Firefox */
 	 
 
 
+
+
+
+
+.carousel-container {
+  max-width: 100%;
+  padding: 20px 0;
+}
+
+.carousel-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.animate-scroll {
+  animation: scroll 50s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
   
 </style>

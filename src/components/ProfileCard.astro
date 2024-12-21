@@ -8,73 +8,60 @@ const { profileData, links} = userData;
 
 <article class="grid gap-4 p-4 rounded-md place-items-center">
 
-  
+<!-- Perfil Optimizado -->
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        class="object-cover aspect-auto w-24 h-24 rounded-full overflow-hidden border-2 border-solid relative bg-cover bg-center p-0 m-0"
+        aria-label={`Video de perfil de ${profileData.profileName}`}
+        oncanplay="this.style.backgroundImage = 'none';"
+        style={{ backgroundImage: `url('${profileData.profileVideo.placeholder}')` }}
+      >
+          <source
+              src={profileData.profileVideo.src}
+              type="video/mp4"
+          />Tu navegador no soporta videos en formato MP4.
+    </video>
 
-   <!-- Perfil Optimizado -->
-   <video
-   autoplay
-   muted
-   loop
-   playsinline
-   preload="metadata"
-   class="object-cover aspect-auto w-24 h-24 rounded-full overflow-hidden border-2 border-solid relative bg-cover bg-center p-0 m-0"
-   aria-label={`Video de perfil de ${profileData.profileName}`}
-   oncanplay="this.style.backgroundImage = 'none';"
-   style={{ backgroundImage: `url('${profileData.profileVideo.placeholder}')` }}
- >
-   <source
-     src={profileData.profileVideo.src}
-     type="video/mp4"
-   />
-   Tu navegador no soporta videos en formato MP4.
- </video>
- 
-
- 
- 
- 
- 
- 
-
-         <!-- Status en línea -->
-      <div class="flex justify-center items-center gap-2 bg-black text-gray-400 text-xs italic py-2 px-4 rounded-full">
+<!-- Status en línea -->
+    <div class="flex justify-center items-center gap-2 bg-black text-gray-400 text-xs italic py-2 px-4 rounded-full">
         <span class="h-2 w-2 bg-green-400 rounded-full animate-pulse"></span>
         <span>{profileData.onlineStatusText}</span>
-      </div>
     </div>
 
 <!-- Profile Name & Description -->
-<div class="w-full grid grid-cols-1 place-content-center gap-2">
-  {links.slice(0, 1).map((link) => (
-    <div class="flex flex-col items-center gap-2">
-      <span class="flex items-center gap-2 text-2xl text-center font-bold">
-        {link.title}
-        <span class="inline-flex w-5 h-5" set:html={link.icon}></span>
-      </span>
-      <h1 class="font-normal text-center">{link.description}</h1>
-    </div>
-  ))}
-</div>
-
-
-
-      <!-- Btn Instagran & WhatsApp -->
-  <div class="w-full grid grid-cols-2 gap-2 place-content-center ">
-      {links.slice(2, 4).map((link, index) => (
-        <a
-          href={link.url}
-          class="flex justify-center items-center gap-1 p-4 bg-slate-700 text-center hover:bg-gray-600 rounded-lg transition-colors duration-300 text-sm"
-          aria-label={link.description}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="w-5 h-5" set:html={link.icon}></span>
-      <span>{link.title}</span>
-    </a>
+    <div class="w-full grid grid-cols-1 place-content-center gap-2">
+      {links.slice(0, 1).map((link) => (
+        <div class="flex flex-col items-center gap-2">
+          <span class="flex items-center gap-2 text-2xl text-center font-bold">
+            {link.title}
+            <span class="inline-flex w-5 h-5" set:html={link.icon}></span>
+          </span>
+          <h1 class="font-normal text-center">{link.description}</h1>
+        </div>
       ))}
+    </div>
+
+ <!-- Btn Instagran & WhatsApp -->
+    <div class="w-full grid grid-cols-2 gap-2 place-content-center ">
+        {links.slice(2, 4).map((link, index) => (
+          <a
+            href={link.url}
+            class="flex justify-center items-center gap-1 p-4 bg-slate-700 text-center hover:bg-gray-600 rounded-lg transition-colors duration-300 text-sm"
+            aria-label={link.description}
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            <span class="w-5 h-5" set:html={link.icon}></span>
+            <span>{link.title}</span>
+          </a>
+            ))}
     </div> 
    
-    <!-- Location Tags -->
+<!-- Location Tags -->
     <div class="flex flex-col">
       <h2 class="text-lg text-center font-normal">
         -{profileData.locationTags[0]}-
@@ -89,7 +76,6 @@ const { profileData, links} = userData;
         ))}
       </div>
     </div>
-
 
 <!-- Btn Redes -->
     <div class="flex flex-row justify-center items-center gap-2">
@@ -111,12 +97,11 @@ const { profileData, links} = userData;
             rel="noopener noreferrer"
           >
              <span class="w-5 h-5" set:html={link.icon}></span>
-    </a>
-        );
-      })}
+          </a>
+              );
+            })}
     </div>
     
-
  <!-- Btn Links -->
     <div class="w-full grid grid-cols-1 gap-2 place-content-center ">
       {links.slice(7,10).map((link, index) => (
@@ -132,7 +117,6 @@ const { profileData, links} = userData;
         </a>
       ))}
     </div>
-   
 
 </article>
 
