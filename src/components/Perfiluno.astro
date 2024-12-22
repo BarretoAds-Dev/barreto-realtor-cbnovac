@@ -1,0 +1,147 @@
+---
+import userData from "../data/user.json";
+
+const { profileData, links} = userData;
+
+---
+<section>
+
+<!-- Header Image -->
+<div class="w-full h-64 -mb-20 relative">
+
+      <!-- bg Image -->
+        <img 
+          src={profileData.profileVideo.placeholder}
+          alt="Header Image" 
+          class="object-cover w-full h-full"
+        />
+         <!-- Overlay Blanco (semi-transparente) -->
+        <div class="absolute inset-0 bg-white opacity-5 pointer-events-none"></div>
+
+      <!-- Status en línea -->
+        <div 
+          class="absolute top-6 left-8 flex items-center gap-2 bg-white text-bodydark font-bold text-xs italic py-1 px-2 rounded-full">
+          <span 
+            class="h-2 w-2 bg-green-400 rounded-full animate-pulse">
+          </span>
+          <span>{profileData.onlineStatusText}</span>
+        </div>
+
+      <!-- Botón para abrir el popup -->
+        <a
+          href="#popup"
+          class="absolute top-4 right-8 flex items-center gap-2 bg-white text-bodydark font-bold text-xs p-2 rounded-md hover:bg-bodydark hover:text-fontlight transition-colors"
+          aria-label="Open Popup"
+        >
+          <span>Abrir Popup</span>
+        </a>
+
+      <!-- Popup -->
+        <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 blur-sm hidden target:flex items-center justify-center z-50">
+
+                <!-- Btn X - Cierre -->
+          <div class="bg-neutral-800 p-8 rounded-lg max-w-md w-full h-fit relative ">
+            <a href="#" class="absolute top-2 right-2 text-fontlight  hover:text-yellow-700 transition-colors" aria-label="Cerrar">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 font-bold bg-neutral-700 p-1 rounded-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </a>
+
+            <!-- Contenido popup -->
+            <h2 class="text-2xl font-bold mb-4">Popup Content</h2>
+            <p class="mb-4">Este es el contenido de tu popup. Puedes personalizarlo según tus necesidades.</p>
+          </div>
+
+        </div>
+
+
+</div>
+
+
+
+<article class="grid gap-4 p-4 rounded-md place-items-center">
+
+<!-- Perfil Optimizado -->
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        class="object-cover aspect-auto w-28 h-28 rounded-full overflow-hidden border-8 border-solid border-bodydark relative bg-cover bg-center p-0 m-0"
+        aria-label={`Video de perfil de ${profileData.profileName}`}
+        oncanplay="this.style.backgroundImage = 'none';"
+        style={{ backgroundImage: `url('${profileData.profileVideo.placeholder}')` }}
+      >
+          <source
+              src={profileData.profileVideo.src}
+              type="video/mp4"
+          />Tu navegador no soporta videos en formato MP4.
+    </video>
+
+<!-- Status en línea -->
+    <div class="flex justify-center items-center gap-2 bg-black text-gray-400 text-xs italic py-2 px-4 rounded-full">
+        <span class="h-2 w-2 bg-green-400 rounded-full animate-pulse"></span>
+        <span>{profileData.onlineStatusText}</span>
+    </div>
+
+<!-- Profile Name -->
+<div class="w-full grid grid-cols-1 place-content-center gap-2">
+    {links.slice(0, 1).map((link) => (
+      <div class="flex flex-col items-center gap-2">
+        <span class="flex items-center gap-2 text-2xl text-center font-bold">
+          {link.title}
+          <span class="inline-flex w-5 h-5 mt-1" set:html={link.icon}></span>
+        </span>
+        <h1 class="text-xs text-gray-400">
+            Asesor Inmobiliario en CDMX | MX.
+        </h1>
+      </div>
+    ))}
+  </div>
+
+
+<!-- Btn Redes Sociales -->
+    <div class="flex flex-row justify-center items-center gap-2">
+      {links.slice(2, 7).map((link) => (
+        <a
+          href={link.url}
+          class="flex justify-center items-center p-2 bg-slate-700 rounded-md transition-colors duration-300 hover:bg-slate-800"
+          aria-label={link.description}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+           <span class="w-6 h-6" set:html={link.icon}></span>
+        </a>
+      ))}
+    </div>
+
+<!-- Profile Description -->
+    <div class="w-full text-center">
+        <h2 class="font-normal">
+            {profileData.roleDescription}
+        </h2>
+    </div>
+
+<!-- Location Tags (Carrusel Infinito) -->
+<div class="overflow-hidden w-full max-w-xs mx-auto">
+    <div class="flex animate-scroll" style="animation: scroll 35s linear infinite; width: max-content;">
+      {profileData.locationTags.concat(profileData.locationTags).map((tag, index) => (
+        <h3
+          class="flex-shrink-0 p-1 text-xs font-normal italic text-center text-gray-300 m-0"
+          style={{ minWidth: 'auto', padding: '0 0.5rem' }}
+        >
+          -{tag}-
+        </h3>
+      ))}
+    </div>
+  </div>
+
+
+
+</article>
+</section>
+
+
+
+
