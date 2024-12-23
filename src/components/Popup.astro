@@ -1,0 +1,27 @@
+---
+const { id, title, description } = Astro.props;
+---
+
+<!-- Popup Modal -->
+<div id={id} 
+  class="fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-500 ease-in-out opacity-0 scale-90 pointer-events-none target:opacity-100 target:scale-100 target:pointer-events-auto bg-black/50"
+  aria-labelledby={`${id}-title`}
+  aria-describedby={`${id}-desc`}>
+
+  <!-- Contenido del Popup -->
+  <div class="relative bg-yellow-800 p-8 rounded-lg max-w-80 shadow-xl z-10">
+    
+    <!-- Botón para Cerrar el Popup -->
+    <a href="#" 
+      class="absolute top-3 right-3" 
+      aria-label="Close Popup">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 p-2 rounded-lg bg-slate-900 hover:bg-yellow-500 transition-colors" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </a>
+    
+    <!-- Título y Descripción del Popup -->
+    <h2 id={`${id}-title`} class="text-2xl font-bold text-white mb-4">{title}</h2>
+    <p id={`${id}-desc`} class="text-neutral-300">{description}</p>
+  </div>
+</div>

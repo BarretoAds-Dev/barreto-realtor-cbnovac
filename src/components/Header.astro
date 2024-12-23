@@ -1,65 +1,49 @@
 ---
+import Popup from '../components/Popup.astro';
 import userData from "../data/user.json";
 
-const { profileData } = userData;
+const profileData = userData.profileData || {
+  onlineStatusText: "Offline",
+};
+
+
 ---
-
 <!-- Header Section -->
-<div class="relative w-full aspect-[16/7] -mb-24">
+<header 
+  class="relative w-full aspect-[16/7] -mb-24 flex flex-col items-center justify-start rounded-3xl shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat before:absolute before:inset-0 before:bg-white/10 before:content-[''] before:pointer-events-none"
+  style={`background-image: url(${profileData.profileVideo.placeholder});`}>
 
-<!-- Background Image -->
-<div class="relative w-full aspect-[16/9] overflow-hidden rounded-md shadow-lg before:absolute before:inset-0 before:bg-white/10 before:pointer-events-none before:content-['']">
-  <img 
-    src={profileData.profileVideo.placeholder} 
-    alt="User profile header background" 
-    class="w-full h-full object-cover"
-    width="540"
-    height="225"
-    loading="lazy"
-    decoding="async"
-    fetchpriority="high"/>
-</div>
+  <!-- Navegación dentro del Header -->
+  <nav class="w-full m-0 p-2 h-12 flex items-center rounded-full z-10">
+    <ul class="flex items-center justify-between w-[90%] max-w-4xl p-0 mx-auto">
+      
+      <!-- Item Izquierdo (Estado Online) -->
+      <li class="flex items-center gap-2 bg-white text-bodydark font-semibold text-xs italic py-1 px-3 rounded-full shadow-md">
+        <span class="h-2 w-2 bg-emerald-500 rounded-full animate-pulse" role="status">
+          <span class="sr-only">{profileData.onlineStatusText}</span>
+        </span>
+        <span>{profileData.onlineStatusText}</span>
+      </li>
+
+      <!-- Item Derecho (Btn Popup) -->
+      <li class="flex items-center">
+          <a href="#popup" 
+            class="flex items-center gap-2 bg-white text-bodydark font-medium text-xs p-2 rounded-md shadow-md hover:bg-bodydark hover:text-white transition-all"
+            aria-label="Open QR Popup">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M16 17V16H13V13H16V15H18V17H17V19H15V21H13V18H15V17H16ZM21 21H17V19H19V17H21V21ZM3 3H11V11H3V3ZM5 5V9H9V5H5ZM13 3H21V11H13V3ZM15 5V9H19V5H15ZM3 13H11V21H3V13ZM5 15V19H9V15H5ZM18 13H21V15H18V13ZM6 6H8V8H6V6ZM6 16H8V18H6V16ZM16 6H18V8H16V6Z"></path>
+            </svg>
+          </a>
+      </li>
+    </ul>
+  </nav>
+
+</header>
 
 
-  <!-- Online Status Badge -->
-  <div 
-    class="absolute top-6 left-8 flex items-center gap-2 bg-white text-bodydark font-semibold text-xs italic py-1 px-2 rounded-full shadow-md">
-    <span class="h-2 w-2 bg-emerald-500 rounded-full animate-pulse" aria-label="Online"></span>
-    <span>{profileData.onlineStatusText}</span>
-  </div>
-
-  <!-- Popup Trigger Button (QR Icon) -->
-  <a 
-    href="#popup" 
-    class="absolute top-4 right-8 flex items-center gap-2 bg-white text-bodydark font-medium text-xs p-2 rounded-md shadow-md hover:bg-bodydark hover:text-white transition-all"
-    aria-label="Open QR Popup">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M16 17V16H13V13H16V15H18V17H17V19H15V21H13V18H15V17H16ZM21 21H17V19H19V17H21V21ZM3 3H11V11H3V3ZM5 5V9H9V5H5ZM13 3H21V11H13V3ZM15 5V9H19V5H15ZM3 13H11V21H3V13ZM5 15V19H9V15H5ZM18 13H21V15H18V13ZM6 6H8V8H6V6ZM6 16H8V18H6V16ZM16 6H18V8H16V6Z"></path>
-    </svg>
-  </a>
-
-  <!-- Popup Modal -->
-  <div 
-    id="popup" 
-    class="fixed inset-0 bg-black bg-opacity-70 hidden target:flex items-center justify-center z-50 transition-transform duration-500 ease-in-out opacity-0 scale-90 target:opacity-100 target:scale-100">
-
-    <!-- Popup Content -->
-    <div class="relative bg-neutral-800 p-8 rounded-lg w-full max-w-80 shadow-xl">
-
-      <!-- Close Button -->
-      <a href="#" 
-        class="absolute top-3 right-3 text-neutral-400 hover:text-yellow-500 transition-colors" 
-        aria-label="Close Popup">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 p-1 rounded-md bg-slate-950" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </a>
-
-      <!-- Popup Text -->
-      <h2 class="text-2xl font-bold text-white mb-4">Popup Content</h2>
-      <p class="text-neutral-300">Este es el contenido de tu popup. Puedes personalizarlo a tus necesidades.</p>
-
-    </div>
-  </div>
-
-</div>
+<!-- Invocación del Componente Popup -->
+<Popup 
+  id="popup"
+  title="QR Code"
+  description="Escanea este código para acceder a más información."
+/>
