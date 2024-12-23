@@ -5,27 +5,26 @@ const { profileData } = userData;
 ---
 
 <!-- Header Section -->
-<div class="relative w-full h-64 -mb-24">
+<div class="relative w-full aspect-[16/7] -mb-24">
 
-  <!-- Background Image -->
+<!-- Background Image -->
+<div class="relative w-full aspect-[16/9] overflow-hidden rounded-md shadow-lg before:absolute before:inset-0 before:bg-white/10 before:pointer-events-none before:content-['']">
   <img 
     src={profileData.profileVideo.placeholder} 
     alt="User profile header background" 
-    class="w-full h-full object-cover rounded-md shadow-lg" 
+    class="w-full h-full object-cover"
     width="540"
     height="225"
     loading="lazy"
     decoding="async"
-    fetchpriority="high"
-  />
-  
-  <!-- Light Overlay -->
-  <div class="absolute inset-0 bg-white opacity-10 pointer-events-none"></div>
+    fetchpriority="high"/>
+</div>
+
 
   <!-- Online Status Badge -->
   <div 
     class="absolute top-6 left-8 flex items-center gap-2 bg-white text-bodydark font-semibold text-xs italic py-1 px-2 rounded-full shadow-md">
-    <span class="h-2 w-2 bg-green-400 rounded-full animate-pulse"></span>
+    <span class="h-2 w-2 bg-emerald-500 rounded-full animate-pulse" aria-label="Online"></span>
     <span>{profileData.onlineStatusText}</span>
   </div>
 
