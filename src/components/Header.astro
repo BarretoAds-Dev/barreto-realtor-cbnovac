@@ -10,9 +10,13 @@ const { profileData } = userData;
   <!-- Background Image -->
   <img 
     src={profileData.profileVideo.placeholder} 
-    alt="Header Image" 
-    class="w-full h-full object-cover" 
+    alt="User profile header background" 
+    class="w-full h-full object-cover rounded-md shadow-lg" 
+    width="540"
+    height="225"
     loading="lazy"
+    decoding="async"
+    fetchpriority="high"
   />
   
   <!-- Light Overlay -->
