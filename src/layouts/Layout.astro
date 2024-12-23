@@ -1,6 +1,6 @@
 ---
 import Metahead from '../layouts/Metahead.astro';
-import Menu from '../components/Menu.astro';
+import Header from '../components/Header.astro';
 
 interface Props {
   title: string;
@@ -20,8 +20,9 @@ const { title, description, url, image } = Astro.props;
 
 
   <body>
-	<!-- <Menu /> -->
+
 		<main>
+      <Header />
 			<slot />
 		</main>
   </body>
@@ -51,7 +52,7 @@ const { title, description, url, image } = Astro.props;
 	}
 
 	main {
-	@apply flex flex-col justify-start items-center h-screen  w-full max-w-[540px] rounded-3xl overflow-hidden bg-bodydark m-2;
+	@apply flex flex-col justify-start items-start gap-4  w-full max-w-[540px] h-screen rounded-3xl overflow-hidden bg-bodydark m-2;
 	}
  
 	section {
@@ -70,8 +71,6 @@ h1, h2, h3, h4, h5, h6, p, li, a  {
 scrollbar-width: none; /* For Firefox */
 -ms-overflow-style: none; /* For IE/Edge */
 	 
-
-
 
 
 

@@ -49,12 +49,6 @@
       "description": "Sigue mis publicaciones sobre oportunidades inmobiliarias en toda la CDMX."
     },
     {
-      "url": "https://www.linkedin.com/in/enmanuel-barreto-inmobiliario",
-      "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='#fff'><path d='M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z'></path></svg>",
-      "title": "LinkedIn",
-      "description": "Conoce más sobre mi trayectoria profesional en LinkedIn y conecta conmigo para tus necesidades inmobiliarias."
-    },
-    {
       "url": "https://www.tiktok.com/@barreto_inmobiliario",
       "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='#fff'><path d='M11.0004 2V8.41396C10.5947 8.33909 10.1768 8.3 9.75039 8.3C5.96724 8.3 2.90039 11.3668 2.90039 15.15C2.90039 18.9332 5.96724 22 9.75039 22C13.5335 22 16.6004 18.9332 16.6004 15.15V11.4136C17.6366 11.8539 18.7662 12.1 20.0005 12.1H21.0005V6.5H20.0005C18.0966 6.5 16.6004 4.96259 16.6004 3V2H11.0004ZM13.0004 4H14.688C15.0818 6.22009 16.7673 7.99607 19.0005 8.4091V10.0282C17.9624 9.87602 17.0253 9.48645 16.1567 8.905L14.6004 7.86327V15.15C14.6004 17.8286 12.429 20 9.75039 20C7.07181 20 4.90039 17.8286 4.90039 15.15C4.90039 12.4714 7.07181 10.3 9.75039 10.3C9.83431 10.3 9.91769 10.3021 10.0005 10.3063V11.9095C9.91795 11.9032 9.83454 11.9 9.75039 11.9C7.95547 11.9 6.50039 13.3551 6.50039 15.15C6.50039 16.9449 7.95547 18.4 9.75039 18.4C11.5453 18.4 13.0004 16.9449 13.0004 15.15C13.0004 11.4334 12.9992 7.71665 13.0004 4ZM8.50039 15.15C8.50039 14.4596 9.06003 13.9 9.75039 13.9C10.4407 13.9 11.0004 14.4596 11.0004 15.15C11.0004 15.8404 10.4407 16.4 9.75039 16.4C9.06003 16.4 8.50039 15.8404 8.50039 15.15Z'></path></svg>",
       "title": "TikTok",
@@ -80,72 +74,11 @@
     }
     
 
-  ],
-  "stats": [
-    { "label": "Años de Experiencia en Bienes Raíces", "value": "10+" },
-    { "label": "Clientes Satisfechos", "value": "100+" },
-    { "label": "Propiedades Gestionadas", "value": "150+" },
-    { "label": "Colonias Cubiertas", "value": "50+" },
-    { "label": "Tiempo Promedio de Venta", "value": "30 días" }
-  ],
-  "description": [
-    "Soy Enmanuel Barreto, asesor inmobiliario líder en la Ciudad de México, especializado en la compra, venta y renta de propiedades residenciales y comerciales. Trabajo en las zonas más exclusivas de CDMX como Polanco, Condesa, Roma, Santa Fe, Coyoacán, Del Valle y más.",
-    "Con más de 10 años de experiencia, ayudo a mis clientes a encontrar su propiedad ideal o a maximizar el valor de su inversión inmobiliaria. Mi enfoque es proporcionar una experiencia personalizada y sin complicaciones, garantizando resultados rápidos y efectivos."
-  ],
-  "services": [
-    "Compra de propiedades residenciales y comerciales en CDMX",
-    "Venta de propiedades con estrategias de marketing digital avanzadas",
-    "Renta de departamentos y casas en zonas exclusivas de la Ciudad de México",
-    "Asesoría personalizada en bienes raíces para inversores",
-    "Análisis de mercado para determinar el valor óptimo de tu propiedad"
-  ],
-  "seoTags": {
-    "metaTitle": "Enmanuel Barreto | Asesor Inmobiliario en CDMX | Compra, Venta y Renta de Propiedades",
-    "metaDescription": "Encuentra las mejores propiedades en la Ciudad de México con Enmanuel Barreto, asesor inmobiliario con 10+ años de experiencia. Especialista en compra, venta y renta en Polanco, Roma, Condesa, Santa Fe y más.",
-    "keywords": [
-      "asesor inmobiliario CDMX",
-      "propiedades en Ciudad de México",
-      "venta de casas en CDMX",
-      "renta de departamentos en Polanco",
-      "compra de propiedades en Condesa",
-      "Coldwell Banker Novac",
-      "propiedades exclusivas en CDMX",
-      "asesoría inmobiliaria CDMX"
-    ],
-    "localBusinessSchema": {
-      "@context": "https://schema.org",
-      "@type": "RealEstateAgent",
-      "name": "Enmanuel Barreto",
-      "image": "/images/profile-enmanuel-barreto.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ciudad de México",
-        "addressRegion": "CDMX",
-        "postalCode": "11560",
-        "streetAddress": "Polanco, Ciudad de México"
-      },
-      "areaServed": "Ciudad de México",
-      "telephone": "+52 1 5526838286",
-      "url": "https://www.coldwellbanker.com.mx/perfil-oficina/coldwell-banker-novac?idOficina=180",
-      "sameAs": [
-        "https://www.instagram.com/barreto.coldwellbanker/",
-        "https://www.facebook.com/enmanuelbarreto",
-        "https://www.linkedin.com/in/enmanuel-barreto-inmobiliario",
-        "https://www.tiktok.com/@barreto_inmobiliario"
-      ]
-    }
-  },
-  "testimonials": [
-    {
-      "name": "María López",
-      "feedback": "Gracias a Enmanuel encontré el departamento perfecto en Polanco. Su profesionalismo y atención personalizada hicieron toda la diferencia.",
-      "rating": 5
-    },
-    {
-      "name": "Carlos Hernández",
-      "feedback": "Vendí mi casa en la Condesa en tiempo récord gracias a las estrategias de marketing de Enmanuel. ¡Altamente recomendado!",
-      "rating": 5
-    }
   ]
+
+ 
+   
+  }
+
   
-}
+
