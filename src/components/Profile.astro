@@ -23,12 +23,7 @@ const { profileData, links} = userData;
                   type="video/mp4"
               />Tu navegador no soporta videos en formato MP4.
         </video>
-    
-    <!-- Status en línea -->
-        <div class="flex justify-center items-center gap-2 bg-black text-gray-400 text-xs italic py-2 px-4 rounded-full">
-            <span class="h-2 w-2 bg-green-400 rounded-full animate-pulse"></span>
-            <span>{profileData.onlineStatusText}</span>
-        </div>
+  
     
     <!-- Profile Name -->
     <div class="w-full grid grid-cols-1 place-content-center gap-2">
@@ -70,7 +65,7 @@ const { profileData, links} = userData;
     
     <!-- Location Tags (Carrusel Infinito) -->
     <div class="overflow-hidden w-full max-w-xs mx-auto">
-        <div class="flex animate-scroll" style="animation: scroll 35s linear infinite; width: max-content;">
+        <div class="flex" style="animation: scroll 35s linear infinite; width: max-content;">
           {profileData.locationTags.concat(profileData.locationTags).map((tag, index) => (
             <h3
               class="flex-shrink-0 p-1 text-xs font-normal italic text-center text-gray-300 m-0"
