@@ -1,6 +1,7 @@
 ---
 import Metahead from '../layouts/Metahead.astro';
 import Header from '../components/header/Header.astro';
+import Footer from '../components/footer/Footer.astro';
 
 interface Props {
   title: string;
@@ -20,11 +21,11 @@ const { title, description, url, image } = Astro.props;
 
 
   <body>
-
-		<main>
-      <Header />
-			<slot />
-		</main>
+    <Header />
+        <main>
+          <slot />
+        </main>
+    <Footer />    
   </body>
 
 
@@ -47,16 +48,20 @@ const { title, description, url, image } = Astro.props;
     lazy: "loading";
   }
   
-	html, body {
+	html {
 		@apply  flex flex-col m-0 p-0 box-border min-h-screen  w-screen antialiased bg-neutral-950 text-fontlight font-montserrat justify-center items-center;
 	}
 
-	main {
-	@apply flex flex-col justify-start items-center gap-4  w-full max-w-[540px] rounded-3xl overflow-hidden bg-bodydark m-2;
+	main, body  {
+    min-height: 100vh; /* Fallback */
+    min-height: 100dvh; /* Dinámico */
+	@apply flex flex-col justify-start items-center w-full max-w-[540px] rounded-3xl m-2  bg-bodydark ;
 	}
+
+
  
 	section {
-		@apply m-0 p-0 text-center text-base font-normal flex flex-col justify-center items-center;
+		@apply m-0 p-0 text-center text-base font-normal flex flex-col justify-center items-center ;
 	} 
 
   /* Estilos globales */

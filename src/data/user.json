@@ -2,9 +2,16 @@
 {
   "profileData": {
     "profileName": "Enmanuel Barreto",
-    "profileImage": {
+    "roleTitle": "Asesor inmobiliario en CDMX | México",
+    "headerImage": {
       "src": "https://media.barretoads.dev/Barreto%20-%20Asesor-Inmobiliario-CDMX-MX-CBNovac.webp",
-      "alt": "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX"
+      "alt": "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX",
+      "default": "/images/fotoEnma.jpeg"
+    },
+    "profileImage": {
+      "src": "/images/fotoEnma.jpeg",
+      "alt": "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX",
+      "default": "/images/fotoEnma.jpeg"
     },
     "profileVideo": {
       "src": "/videos/1-Analisis-Mercado-Inmobiliario-Barreto-Coldwell-Banker-NOVAC-CDMX-2025-MX.mp4",

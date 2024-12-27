@@ -1,98 +1,84 @@
 ---
 import userData from "../data/user.json";
-
-const { profileData, links} = userData;
-
+const { profileData, links } = userData;
+const locationTagsRepeated = profileData?.locationTags ? [...profileData.locationTags, ...profileData.locationTags] : [];
 ---
 
-<article class="grid gap-4 p-4 rounded-md place-items-center bg-bodydark">
-    <!-- Perfil Optimizado -->
-        <video
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            class="object-cover aspect-auto w-28 h-28 rounded-full overflow-hidden border-8 border-solid border-bodydark relative bg-cover bg-center p-0 m-0"
-            aria-label={`Video de perfil de ${profileData.profileName}`}
-            oncanplay="this.style.backgroundImage = 'none';"
-            style={{ backgroundImage: `url('${profileData.profileVideo.placeholder}')` }}
+<section
+  class="flex flex-col gap-4 p-8 justify-center items-center "
+  role="region"
+  aria-labelledby={profileData.roleDescription}
+>
+
+
+<picture class="relative w-32 h-32 rounded-full border-8 border-solid border-bodydark overflow-hidden">
+  <img
+    src={profileData?.profileImage?.src || profileData?.profileImage?.default}
+    alt={profileData?.profileImage?.alt || profileData?.profileImage?.default}
+    class="object-cover object-top w-full h-full"
+    loading="eager"
+    width="128"
+    height="128"
+  />
+</picture>
+
+
+  {links?.slice(0, 1).map((link) => (
+    <div class="flex flex-col items-center gap-1" data-key={link.title}>
+      <span id="profile-title" class="text-3xl font-bold flex items-center gap-2">
+        {link.title}
+        <span class="inline-flex w-6 h-6 mt-1" set:html={link.icon}></span>
+      </span>
+      <h1 class="text-sm text-gray-400">{profileData.roleTitle}</h1>
+    </div>
+  ))}
+
+  <div class="flex flex-row justify-center gap-4" aria-label="Redes sociales">
+    {links?.slice(2, 6).map((link) => (
+      <a
+        href={link.url}
+        class="flex justify-center items-center p-3 bg-slate-700 rounded-lg hover:bg-slate-800 transform hover:scale-105 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        aria-label={link.description || `Enlace a ${link.title}`}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+      >
+        <span class="w-7 h-7" set:html={link.icon}></span>
+      </a>
+    ))}
+  </div>
+
+  <div class="text-center" aria-label="Descripción del rol">
+    <h2 class="text-lg font-medium text-gray-300">
+      {profileData?.roleDescription || 'Descripción no disponible'}
+    </h2>
+  </div>
+
+
+    <div class="relative w-full overflow-hidden max-w-sm mx-auto" aria-label="Ubicaciones destacadas">
+      <div class="flex animate-scroll space-x-4 w-max">
+        {locationTagsRepeated.map((tag, index) => (
+          <span
+            data-key={`${tag}-${index}`}
+            class="text-xs font-medium text-gray-300 px-3 py-1 bg-slate-800 rounded-md shadow whitespace-nowrap"
           >
-              <source
-                  src={profileData.profileVideo.src}
-                  type="video/mp4"
-              />Tu navegador no soporta videos en formato MP4.
-        </video>
-  
-    
-    <!-- Profile Name -->
-    <div class="w-full grid grid-cols-1 place-content-center gap-2">
-        {links.slice(0, 1).map((link) => (
-          <div class="flex flex-col items-center gap-2">
-            <span class="flex items-center gap-2 text-2xl text-center font-bold">
-              {link.title}
-              <span class="inline-flex w-5 h-5 mt-1" set:html={link.icon}></span>
-            </span>
-            <h1 class="text-xs text-gray-400">
-                Asesor Inmobiliario en CDMX | MX.
-            </h1>
-          </div>
+            {tag}
+          </span>
         ))}
       </div>
-    
-    
-    <!-- Btn Redes Sociales -->
-        <div class="flex flex-row justify-center items-center gap-2">
-          {links.slice(2, 6).map((link) => (
-            <a
-              href={link.url}
-              class="flex justify-center items-center p-2 bg-slate-700 rounded-md transition-colors duration-300 hover:bg-slate-800"
-              aria-label={link.description}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-               <span class="w-6 h-6" set:html={link.icon}></span>
-            </a>
-          ))}
-        </div>
-    
-    <!-- Profile Description -->
-        <div class="w-full text-center">
-            <h2 class="font-normal">
-                {profileData.roleDescription}
-            </h2>
-        </div>
-    
-    <!-- Location Tags (Carrusel Infinito) -->
-    <div class="overflow-hidden w-full max-w-xs mx-auto">
-        <div class="flex" style="animation: scroll 35s linear infinite; width: max-content;">
-          {profileData.locationTags.concat(profileData.locationTags).map((tag, index) => (
-            <h3
-              class="flex-shrink-0 p-1 text-xs font-normal italic text-center text-gray-300 m-0"
-              style={{ minWidth: 'auto', padding: '0 0.5rem' }}
-            >
-              -{tag}-
-            </h3>
-          ))}
-        </div>
-      </div>
-    
-    
-    
-       <!-- Btn Links -->
-       <div class="w-full grid grid-cols-1 gap-2 place-content-center ">
-        {links.slice(6,7).map((link, index) => (
-          <a
-            href={link.url}
-            class="flex justify-center items-center gap-2 p-6 bg-slate-700 text-center hover:bg-gray-600 rounded-lg transition-colors duration-300 text-sm  border-s-blue-500 border-solid border-t-0 border-b-0 border-e-0 font-bold"
-            aria-label={link.description}
-            target="_blank"
-            rel="noopener noreferrer"
-          > 
-              {link.title}
-          </a>
-        ))}
-      </div>
-    
-    
-    </article>
+    </div>
+
+
+  <div class="w-full max-w-sm mx-auto" aria-label="Acción principal">
+    {links?.slice(6, 7).map((link) => (
+      <a
+        href={link.url}
+        class="block w-full text-center p-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-500 transition-all duration-300 shadow-md focus:ring-4 focus:ring-blue-300 focus:outline-none"
+        aria-label={link.description || `Ir a ${link.title}`}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+      >
+        {link.title}
+      </a>
+    ))}
+  </div>
+</section>
