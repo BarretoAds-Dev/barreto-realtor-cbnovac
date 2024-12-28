@@ -1,52 +1,73 @@
 ---
-const { title, description, url } = Astro.props;
+const { title, description, url, headerImage } = Astro.props;
 
 const fontUrl =
   "https://cdn.jsdelivr.net/fontsource/fonts/montserrat:vf@latest/latin-wght-normal.woff2";
-const videoSrc = "/videos/1-Analisis-Mercado-Inmobiliario-Barreto-Coldwell-Banker-NOVAC-CDMX-2025-MX.mp4";
+// const videoSrc = "/videos/1-Analisis-Mercado-Inmobiliario-Barreto-Coldwell-Banker-NOVAC-CDMX-2025-MX.mp4";
 
 ---
 
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>{title}</title>
-<meta name="description" content={description} />
-<link rel="canonical" href={url} />
-<!-- Metadatos de Open Graph -->
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:url" content={url} />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Barreto | Asesor Inmobiliario en Coldwell Banker Novac - CDMX/MX." />
-<meta property="og:locale" content="es_ES" />
-<!-- Robots meta tag for SEO control -->
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={url} />
 
+  <!-- Metadatos de Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={url} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Barreto | Asesor Inmobiliario en Coldwell Banker Novac - CDMX/MX." />
+  <meta property="og:locale" content="es_ES" />
 
+  <!-- Robots meta tag for SEO control -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-<!-- Precarga de la fuente -->
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
-    <link
-      rel="preload"
-      href={fontUrl}
-      type="font/woff2"
-      crossorigin="anonymous"
-      fetchpriority="high"
-    />
+  <!-- Precarga de la fuente -->
+  <link 
+    rel="preconnect" 
+    href="https://cdn.jsdelivr.net" 
+    crossorigin="anonymous" />
+    
+  <link
+    rel="preload"
+    href={`${fontUrl}`}
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+    fetchpriority="high"
+  />
 
- <!-- Precarga de video específico -->
-<link rel="preconnect" href="https://barretoads.dev" crossorigin="anonymous" />
-    <link
-      rel="preload"
-      href={videoSrc}
-      type="video/mp4"
-      crossorigin="anonymous"
-      fetchpriority="high"
-    />
+  <!-- Precarga de video específico -->
+  <link rel="preconnect" href="https://barretoads.dev" crossorigin="anonymous" />
+  <!-- <link
+    rel="preload"
+    href="/videos/1-Analisis-Mercado-Inmobiliario-Barreto-Coldwell-Banker-NOVAC-CDMX-2025-MX.mp4"
+    as="video"
+    type="video/mp4"
+    fetchpriority="high"
+  /> -->
   
-
-  
-
+  <!-- Preload Link for Header Image -->
+  <link 
+    rel="preload" 
+    href="https://media.barretoads.dev/Barreto%20-%20Asesor-Inmobiliario-CDMX-MX-CBNovac.webp"
+    as="image"
+    type="image/jpeg" 
+    fetchpriority="high"
+    imagesrcset="https://media.barretoads.dev/Barreto%20-%20Asesor-Inmobiliario-CDMX-MX-CBNovac.webp"
+    imagesizes="100vw" 
+  />
+  <link 
+  rel="preload" 
+  href="https://media.barretoads.dev/fotoEnma.webp"
+  as="image"
+  type="image/jpeg" 
+  fetchpriority="high"
+  imagesrcset="https://media.barretoads.dev/fotoEnma.webp"
+  imagesizes="100vw" 
+/>
 </head>
