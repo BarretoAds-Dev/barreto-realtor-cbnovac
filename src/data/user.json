@@ -6,7 +6,7 @@
     "headerImage": {
       "src": "https://media.barretoads.dev/Barreto%20-%20Asesor-Inmobiliario-CDMX-MX-CBNovac.webp",
       "alt": "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX",
-      "default": "/images/fotoEnma.jpeg"
+      "default": "https://media.barretoads.dev/Barreto%20-%20Asesor-Inmobiliario-CDMX-MX-CBNovac.webp"
     },
     "profileImage": {
       "src": "https://media.barretoads.dev/fotoEnma.webp",
