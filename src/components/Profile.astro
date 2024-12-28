@@ -15,7 +15,7 @@ const locationTagsRepeated = profileData?.locationTags ? [...profileData.locatio
   <img
     src={profileData?.profileImage?.src || profileData?.profileImage?.default}
     alt={profileData?.profileImage?.alt || profileData?.profileImage?.default}
-    class="object-cover object-top w-full h-full"
+    class="object-cover object-top aspect-auto"
     loading="eager"
     width="128"
     height="128"
