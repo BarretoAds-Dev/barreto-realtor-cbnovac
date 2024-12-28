@@ -9,10 +9,8 @@ const profileData = userData.profileData || {
 
 ---
 <!-- Header Section -->
-<header 
-  class="relative w-full aspect-[16/9] -mb-28 flex flex-col items-center justify-start rounded-3xl shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat before:absolute before:inset-0 before:bg-white/10 before:content-[''] before:pointer-events-none"
-  style={`background-image: url(${profileData.headerImage.src});`}>
-
+<header class="relative w-full aspect-[16/9] -mb-28 flex flex-col items-center justify-start rounded-3xl shadow-lg overflow-hidden">
+ 
   <!-- Navegación dentro del Header -->
   <nav class="w-full m-0 p-2 h-12 flex items-center rounded-full z-10">
     <ul class="flex items-center justify-between w-[90%] max-w-4xl p-0 mx-auto">
@@ -37,6 +35,17 @@ const profileData = userData.profileData || {
       </li>
     </ul>
   </nav>
+
+  <picture class="absolute w-full h-full ">
+    <img 
+    src={profileData.headerImage?.src} 
+    alt="Header Background" 
+    class="object-cover object-center w-full h-full opacity-80  " 
+    loading="eager"
+    width="540"
+    height="303"
+   >
+  </picture>
   
 <!-- Invocación del Componente Popup -->
 <Popup 

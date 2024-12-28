@@ -20,7 +20,7 @@ const { title, description, url, image } = Astro.props;
 <Metahead title={title} description={description} url={url} image={image} />
 
 
-  <body>
+  <body class="m-2 p-2 max-w-[465px]">
     <Header />
         <main>
           <slot />
@@ -55,14 +55,9 @@ const { title, description, url, image } = Astro.props;
 	main, body  {
     min-height: 100vh; /* Fallback */
     min-height: 100dvh; /* Dinámico */
-	@apply flex flex-col justify-start items-center w-full max-w-[540px] rounded-3xl m-2  bg-bodydark ;
+	@apply flex flex-col justify-start items-center rounded-3xl bg-bodydark w-full;
 	}
 
-
- 
-	section {
-		@apply m-0 p-0 text-center text-base font-normal flex flex-col justify-center items-center ;
-	} 
 
   /* Estilos globales */
 h1, h2, h3, h4, h5, h6, p, li, a  {

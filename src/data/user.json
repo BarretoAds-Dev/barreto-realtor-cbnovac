@@ -9,7 +9,7 @@
       "default": "/images/fotoEnma.jpeg"
     },
     "profileImage": {
-      "src": "/images/fotoEnma.jpeg",
+      "src": "https://media.barretoads.dev/fotoEnma.webp",
       "alt": "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX",
       "default": "/images/fotoEnma.jpeg"
     },
