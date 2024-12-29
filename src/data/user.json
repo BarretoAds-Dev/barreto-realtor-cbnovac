@@ -4,9 +4,9 @@
     "profileName": "Enmanuel Barreto",
     "roleTitle": "Asesor inmobiliario en CDMX | México",
     "headerImage": {
-      "src": "/images/Barreto-Cover-bg.avif",
+      "src": "https://media.barretoads.dev/Barreto-Cover-bg.avif",
       "alt": "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX",
-      "default": "/images/Barreto-Cover-bg.webp"
+      "default": "https://media.barretoads.dev/Barreto-Cover-bg.webp"
     },
     "profileImage": {
       "src": "https://media.barretoads.dev/fotoEnma.webp",
