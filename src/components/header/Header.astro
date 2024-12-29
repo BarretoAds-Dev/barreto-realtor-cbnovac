@@ -33,8 +33,9 @@ const commonButtonStyle = "flex items-center gap-2 bg-white text-bodydark font-m
     <img 
       src={headerImage.default} 
       alt={headerImage.alt} 
-      class="w-full h-full object-cover opacity-80" 
-      loading="lazy"
+      class="w-full h-full object-cover" 
+      loading="eager" 
+      fetchpriority="high"
     />
   </picture>
   
