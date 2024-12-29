@@ -6,19 +6,19 @@
 
 
     "headerImage": {
-      "src": "/images/Barreto-Cover-bg.avif",
+      "src": "https://media.barretoads.dev/Barreto-Cover-bg.avif",
       "alt": "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX",
-      "default": "/images/Barreto-Cover-bg.webp"
+      "default": "https://media.barretoads.dev/Barreto-Cover-bg.webp"
     },
     "profileImage": {
-      "src": "/images/EnmaPerfil.avif",
+      "src": "https://media.barretoads.dev/EnmaPerfil.avif",
       "alt": "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX",
-      "default": "/images/EnmaPerfil.webp"
+      "default": "https://media.barretoads.dev/EnmaPerfil.webp"
     },
 
 
 
-
+    
     "profileVideo": {
       "src": "/videos/1-Analisis-Mercado-Inmobiliario-Barreto-Coldwell-Banker-NOVAC-CDMX-2025-MX.mp4",
       "placeholder": "https://media.barretoads.dev/Barreto%20-%20Asesor-Inmobiliario-CDMX-MX-CBNovac.webp",
