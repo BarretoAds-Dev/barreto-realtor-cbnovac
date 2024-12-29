@@ -23,7 +23,7 @@ const preloadType = preloadImage.endsWith('.avif') ? 'image/avif' : 'image/webp'
 <section class="flex flex-col gap-4 p-8 justify-start items-center">
   
   <!-- Imagen de Perfil (Aspect Ratio 1:1) -->
-  <picture class="relative w-32 h-32 rounded-full border-8 border-solid border-bodydark overflow-hidden"
+  <picture class="relative w-36 h-36 rounded-full border-8 border-solid border-bodydark overflow-hidden"
            style={`aspect-ratio: ${aspectRatio};`}>
     <source srcset={profileImage.src} type="image/avif" />
     <source srcset={profileImage.default} type="image/webp" />
