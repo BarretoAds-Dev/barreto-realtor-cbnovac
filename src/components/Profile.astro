@@ -11,8 +11,8 @@ const profileImage = profileData.profileImage || {
 };
 
 // Dimensiones reales de la imagen (1200x1200)
-const imageWidth = 1200;
-const imageHeight = 1200;
+const imageWidth = 128;
+const imageHeight = 128;
 const aspectRatio = imageWidth / imageHeight; // 1:1 para perfil
 
 // Preload dinámico para la imagen de perfil
@@ -33,6 +33,8 @@ const preloadType = preloadImage.endsWith('.avif') ? 'image/avif' : 'image/webp'
       class="w-full h-full object-cover bg-center bg-no-repeat" 
       width={imageWidth} 
       height={imageHeight}
+       width="128" 
+      height="128"
       loading="eager" 
       fetchpriority="high"
       decoding="async"
