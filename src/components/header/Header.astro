@@ -34,8 +34,11 @@ const commonButtonStyle = "flex items-center gap-2 bg-white text-bodydark font-m
       src={headerImage.default} 
       alt={headerImage.alt} 
       class="w-full h-full object-cover" 
+      width="993" 
+      height="571"
       loading="eager" 
       fetchpriority="high"
+      decoding="auto"
     />
   </picture>
   
@@ -65,5 +68,6 @@ const commonButtonStyle = "flex items-center gap-2 bg-white text-bodydark font-m
     id="popup"
     title="QR Code"
     description="Escanea este código para acceder a más información."
+    aria-hidden="true"
   />
 </header>
