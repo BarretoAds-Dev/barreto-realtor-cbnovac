@@ -6,14 +6,14 @@
 
 
     "headerImage": {
-      "src": "https://media.barretoads.dev/Barreto-Cover-bg.avif",
+      "src": "/images/Barreto-Cover-bg.avif",
       "alt": "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX",
-      "default": "https://media.barretoads.dev/Barreto-Cover-bg.webp"
+      "default": "/images/Barreto-Cover-bg.webp"
     },
     "profileImage": {
-      "src": "https://media.barretoads.dev/EnmaPerfil.avif",
+      "src": "/images/EnmaPerfil.avif",
       "alt": "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX",
-      "default": "https://media.barretoads.dev/EnmaPerfil.webp"
+      "default": "/images/EnmaPerfil.webp"
     },
 
 
