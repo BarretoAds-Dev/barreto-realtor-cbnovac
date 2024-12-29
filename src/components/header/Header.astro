@@ -23,7 +23,7 @@ const commonButtonStyle = "flex items-center gap-2 bg-white text-bodydark font-m
 
 <!-- Header Section -->
 <header 
-  class="relative w-full flex flex-col -mb-24 items-center justify-start rounded-3xl shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed"
+  class="relative w-full flex flex-col -mb-24 items-center justify-start rounded-3xl shadow-lg overflow-hidden"
   style={`aspect-ratio: ${aspectRatio};`}>
   
   <!-- Imagen de fondo con respaldo -->
@@ -33,7 +33,7 @@ const commonButtonStyle = "flex items-center gap-2 bg-white text-bodydark font-m
     <img 
       src={headerImage.default} 
       alt={headerImage.alt} 
-      class="w-full h-full object-cover" 
+      class="w-full h-full object-cover bg-center bg-no-repeat" 
       width="993" 
       height="571"
       loading="eager" 
