@@ -2,22 +2,39 @@
 import userData from "../data/user.json";
 const { profileData, links } = userData;
 const locationTagsRepeated = profileData?.locationTags ? [...profileData.locationTags, ...profileData.locationTags] : [];
+
+
+// Extraer las imágenes del profileData
+const profileImage = profileData.profileImage || {
+  src: "https://media.barretoads.dev/EnmaPerfil.avif",
+  alt: "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX",
+  default: "https://media.barretoads.dev/EnmaPerfil.webp",
+};
+
+// // Dimensiones de la imagen (993x571)
+// const imageWidth = 993; // Ancho real de la imagen
+// const imageHeight = 571; // Alto real de la imagen
+// const aspectRatio = imageWidth / imageHeight; // Relación de aspecto (993 / 571 ≈ 1.739)
 ---
 
 <section
   class="flex flex-col gap-4 p-8 justify-start items-center "
 >
 
-
-<picture class="relative w-32 h-32 rounded-full border-8 border-solid border-bodydark overflow-hidden bg-emerald-700">
-  <!-- <img
-    src={profileData?.profileImage?.src || profileData?.profileImage?.default}
-    alt={profileData?.profileImage?.alt || profileData?.profileImage?.default}
-    class="object-cover object-top aspect-auto"
-    loading="eager"
-    width="128"
+<!-- Imagen de fondo con respaldo -->
+<picture class="relative w-32 h-32 rounded-full border-8 border-solid border-bodydark overflow-hidden">
+  <source srcset={profileImage.src} type="image/avif" />
+  <source srcset={profileImage.default} type="image/webp" />
+  <img 
+    src={profileImage.default} 
+    alt={profileImage.alt} 
+    class="w-full h-full object-cover bg-center bg-no-repeat" 
+    width="128" 
     height="128"
-  /> -->
+    loading="eager" 
+    fetchpriority="high"
+    decoding="async"
+  />
 </picture>
 
 
