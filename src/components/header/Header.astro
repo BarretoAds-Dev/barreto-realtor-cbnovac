@@ -8,9 +8,9 @@ const profileData = userData.profileData || {
 
 // Extraer las imágenes del profileData
 const headerImage = profileData.headerImage || {
-  src: "/default-image.avif",
-  alt: "Default header image",
-  default: "/default-image.webp",
+  src: "/images/Barreto-Cover-bg.avif",
+  alt: "Fotografía de Enmanuel Barreto, asesor inmobiliario en CDMX",
+  default: "/images/Barreto-Cover-bg.webp",
 };
 
 // Dimensiones de la imagen (993x571)
@@ -23,21 +23,29 @@ const commonButtonStyle = "flex items-center gap-2 bg-white text-bodydark font-m
 
 <!-- Header Section -->
 <header 
-  class="relative w-full flex flex-col -mb-24 items-center justify-start rounded-3xl shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat before:absolute before:inset-0 before:bg-white/90 before:content-[''] before:pointer-events-none"
+  class="relative w-full flex flex-col -mb-24 items-center justify-start rounded-3xl shadow-lg overflow-hidden"
   style={`aspect-ratio: ${aspectRatio};`}>
   
   <!-- Imagen de fondo con respaldo -->
   <picture class="absolute inset-0 w-full h-full z-0">
     <source srcset={headerImage.src} type="image/avif" />
     <source srcset={headerImage.default} type="image/webp" />
-    <img 
-      src={headerImage.default} 
-      alt={headerImage.alt} 
-      class="w-full h-full object-cover" 
-      loading="eager" 
-      fetchpriority="high"
-    />
+      <img 
+          src={headerImage.default} 
+          alt={headerImage.alt} 
+          class="w-full h-full object-cover" 
+          width="993" 
+          height="571"
+          loading="eager" 
+          fetchpriority="high"
+          decoding="async"
+          sizes="100vw"
+        />
+       <!-- Capa semitransparente -->
+           <div class="absolute inset-0 bg-white opacity-15 pointer-events-none"></div>
   </picture>
+
+
   
   <!-- Navegación dentro del Header -->
   <nav class="w-full m-0 p-2 h-12 flex items-center rounded-full z-10">
@@ -65,5 +73,6 @@ const commonButtonStyle = "flex items-center gap-2 bg-white text-bodydark font-m
     id="popup"
     title="QR Code"
     description="Escanea este código para acceder a más información."
+
   />
 </header>
