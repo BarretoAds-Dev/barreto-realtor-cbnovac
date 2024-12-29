@@ -3,7 +3,6 @@ import userData from "../data/user.json";
 const { profileData, links } = userData;
 const locationTagsRepeated = profileData?.locationTags ? [...profileData.locationTags, ...profileData.locationTags] : [];
 
-
 // Extraer las imágenes del profileData
 const profileImage = profileData.profileImage || {
   src: "https://media.barretoads.dev/EnmaPerfil.avif",
@@ -11,33 +10,36 @@ const profileImage = profileData.profileImage || {
   default: "https://media.barretoads.dev/EnmaPerfil.webp",
 };
 
-// // Dimensiones de la imagen (993x571)
-// const imageWidth = 993; // Ancho real de la imagen
-// const imageHeight = 571; // Alto real de la imagen
-// const aspectRatio = imageWidth / imageHeight; // Relación de aspecto (993 / 571 ≈ 1.739)
+// Dimensiones reales de la imagen (1200x1200)
+const imageWidth = 1200;
+const imageHeight = 1200;
+const aspectRatio = imageWidth / imageHeight; // 1:1 para perfil
+
+// Preload dinámico para la imagen de perfil
+const preloadImage = profileImage.src || profileImage.default;
+const preloadType = preloadImage.endsWith('.avif') ? 'image/avif' : 'image/webp';
 ---
 
-<section
-  class="flex flex-col gap-4 p-8 justify-start items-center "
->
+<section class="flex flex-col gap-4 p-8 justify-start items-center">
+  
+  <!-- Imagen de Perfil (Aspect Ratio 1:1) -->
+  <picture class="relative w-32 h-32 rounded-full border-8 border-solid border-bodydark overflow-hidden"
+           style={`aspect-ratio: ${aspectRatio};`}>
+    <source srcset={profileImage.src} type="image/avif" />
+    <source srcset={profileImage.default} type="image/webp" />
+    <img 
+      src={profileImage.default} 
+      alt={profileImage.alt} 
+      class="w-full h-full object-cover bg-center bg-no-repeat" 
+      width={imageWidth} 
+      height={imageHeight}
+      loading="eager" 
+      fetchpriority="high"
+      decoding="async"
+    />
+  </picture>
 
-<!-- Imagen de fondo con respaldo -->
-<picture class="relative w-32 h-32 rounded-full border-8 border-solid border-bodydark overflow-hidden">
-  <source srcset={profileImage.src} type="image/avif" />
-  <source srcset={profileImage.default} type="image/webp" />
-  <img 
-    src={profileImage.default} 
-    alt={profileImage.alt} 
-    class="w-full h-full object-cover bg-center bg-no-repeat" 
-    width="128" 
-    height="128"
-    loading="eager" 
-    fetchpriority="high"
-    decoding="async"
-  />
-</picture>
-
-
+  <!-- Título y Rol -->
   {links?.slice(0, 1).map((link) => (
     <div class="flex flex-col items-center gap-1" data-key={link.title}>
       <span id="profile-title" class="text-3xl font-bold flex items-center gap-2">
@@ -48,6 +50,7 @@ const profileImage = profileData.profileImage || {
     </div>
   ))}
 
+  <!-- Redes Sociales -->
   <div class="flex flex-row justify-center gap-4" aria-label="Redes sociales">
     {links?.slice(2, 6).map((link) => (
       <a
@@ -62,27 +65,28 @@ const profileImage = profileData.profileImage || {
     ))}
   </div>
 
+  <!-- Descripción del Rol -->
   <div class="text-center" aria-label="Descripción del rol">
     <h2 class="text-lg font-medium text-gray-300">
       {profileData?.roleDescription || 'Descripción no disponible'}
     </h2>
   </div>
 
-
-    <div class="relative w-full overflow-hidden max-w-sm mx-auto" aria-label="Ubicaciones destacadas">
-      <div class="flex animate-scroll space-x-4 w-max">
-        {locationTagsRepeated.map((tag, index) => (
-          <span
-            data-key={`${tag}-${index}`}
-            class="text-xs font-medium text-gray-300 px-3 py-1 bg-slate-800 rounded-md shadow whitespace-nowrap"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
+  <!-- Ubicaciones Destacadas -->
+  <div class="relative w-full overflow-hidden max-w-sm mx-auto" aria-label="Ubicaciones destacadas">
+    <div class="flex animate-scroll space-x-4 w-max">
+      {locationTagsRepeated.map((tag, index) => (
+        <span
+          data-key={`${tag}-${index}`}
+          class="text-xs font-medium text-gray-300 px-3 py-1 bg-slate-800 rounded-md shadow whitespace-nowrap"
+        >
+          {tag}
+        </span>
+      ))}
     </div>
+  </div>
 
-
+  <!-- Acción Principal -->
   <div class="flex flex-row justify-normal items-center w-full" aria-label="Acción principal">
     {links?.slice(6, 7).map((link) => (
       <a
