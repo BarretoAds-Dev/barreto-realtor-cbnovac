@@ -3,8 +3,16 @@ const { title, description, url, headerImage } = Astro.props;
 
 const fontUrl =
   "https://cdn.jsdelivr.net/fontsource/fonts/montserrat:vf@latest/latin-wght-normal.woff2";
-// const videoSrc = "/videos/1-Analisis-Mercado-Inmobiliario-Barreto-Coldwell-Banker-NOVAC-CDMX-2025-MX.mp4";
 
+// const images = [
+//   // { name: '/images/Barreto-Cover-bg.avif', type: 'avif' },
+//   // { name: '/images/Barreto-Cover-bg.webp', type: 'webp' }
+//   // { name: '/images/EnmaPerfil.avif', type: 'avif' },
+//   // { name: '/images/EnmaPerfil.webp', type: 'webp' }
+// ];
+
+// const crossorigin = 'anonymous';
+// const fetchPriority = 'high';
 ---
 
 <head>
@@ -41,83 +49,18 @@ const fontUrl =
     fetchpriority="high"
   />
 
+  <!-- Precarga de recursos locales -->
 
+<link rel="preconnect" href="https://barretoads.dev" crossorigin="anonymous" />
 
-
-  <!-- <link rel="preconnect" href="https://media.barretoads.dev" crossorigin="anonymous" /> -->
-  <!-- Precargar img header cover R2-->
-<!-- <link 
-rel="preload" 
-as="image" 
-href="https://media.barretoads.dev/Barreto-Cover-bg.avif" 
-type="image/avif" 
-fetchpriority="high"
-crossorigin="anonymous"
-/> -->
-<!-- <link 
-rel="preload" 
-as="image" 
-href="https://media.barretoads.dev/Barreto-Cover-bg.webp" 
-type="image/webp" 
-fetchpriority="high"
-crossorigin="anonymous"
-/> -->
-<!-- Precargar img profile R2-->
-<!-- <link 
-rel="preload" 
-as="image" 
-href="https://media.barretoads.dev/EnmaPerfil.avif" 
-type="image/avif" 
-
-fetchpriority="high"
-/>
-<link 
-rel="preload" 
-as="image" 
-href="https://media.barretoads.dev/EnmaPerfil.webp" 
-type="image/webp" 
-
-fetchpriority="high"
-/> -->
-
-
-  <link rel="preconnect" href="https://barretoads.dev" crossorigin="anonymous" />
-    <!-- Precargar img header cover local-->
-  <link 
-  rel="preload" 
-  as="image" 
-  href="/images/Barreto-Cover-bg.avif" 
-  type="image/avif" 
-  fetchpriority="high"
-  crossorigin="anonymous"
-/>
-<link 
-  rel="preload" 
-  as="image" 
-  href="/images/Barreto-Cover-bg.webp" 
-  type="image/webp" 
-  fetchpriority="high"
-  crossorigin="anonymous"
-/>
- <!-- Precargar img profile local-->
-<link 
-  rel="preload" 
-  as="image" 
-  href="/images/EnmaPerfil.avif" 
-  type="image/avif" 
-  crossorigin="anonymous"
-  fetchpriority="high"
-/>
-<link 
-  rel="preload" 
-  as="image" 
-  href="/images/EnmaPerfil.webp" 
-  type="image/webp" 
-  crossorigin="anonymous"
-  fetchpriority="high"
-/>
-
-
-
-
+<!-- {images.map((image) => (
+  <link
+    rel="preload"
+    as="image"
+    href={image.name}
+    type={`image/${image.type}`}
+    fetchpriority={fetchPriority}
+    crossorigin={crossorigin}
+  />
+))} -->
 </head>
