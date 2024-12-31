@@ -20,7 +20,7 @@ const { title, description, url, image } = Astro.props;
 <Metahead title={title} description={description} url={url} image={image} />
 
 
-  <body class="m-2 p-2 max-w-[465px]">
+  <body class="m-2 p-2 max-w-[450px]">
     <Header />
         <main>
           <slot />
@@ -63,10 +63,6 @@ const { title, description, url, image } = Astro.props;
 h1, h2, h3, h4, h5, h6, p, li, a  {
     @apply m-0 p-0 text-center  text-base no-underline decoration-0 text-fontlight;
 }
-
-
-
-
 
 .carousel-container {
   max-width: 100%;

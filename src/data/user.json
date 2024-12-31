@@ -68,7 +68,7 @@
       "description": "Mira videos de tips inmobiliarios y propiedades en TikTok."
     },
     {
-      "url": "https://api.whatsapp.com/send?phone=5215526838286",
+      "url": "/",
       "icon": "/icons/asesoria.svg",
       "title": "Asesoría Gratuita",
       "description": "Agenda una asesoría gratuita con un experto inmobiliario."

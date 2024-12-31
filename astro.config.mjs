@@ -9,6 +9,7 @@ import react from '@astrojs/react';
 
 
 export default defineConfig({
+ 
   prefetch: {
     defaultStrategy: 'viewport'
   },
