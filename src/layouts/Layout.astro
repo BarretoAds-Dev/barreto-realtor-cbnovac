@@ -1,7 +1,8 @@
 ---
-import Metahead from '../layouts/Metahead.astro';
-import Header from '../components/header/Header.astro';
-import Footer from '../components/footer/Footer.astro';
+// src/layouts/Layout.astro
+import Metahead from '@layouts/Metahead.astro';
+import Header from '@components/header/Header.astro';
+import Footer from '@components/footer/Footer.astro';
 
 interface Props {
   title: string;
@@ -22,6 +23,7 @@ const { title, description, url, image } = Astro.props;
 
   <body class="m-2 p-2 max-w-[450px]">
     <Header />
+       <!-- Content Section -->
         <main>
           <slot />
         </main>

@@ -1,0 +1,290 @@
+---
+const styles = {
+  form: `flex flex-col bg-bodydark p-10 rounded-xl shadow-2xl gap-3 border border-slate-700`,
+  div: `flex flex-col justify-center items-start gap-1  `,
+  fields: `flex flex-row w-full justify-start items-start text-sm font-medium `,
+  inputBase: `appearance-none flex p-3 bg-bodydark border-solid border-slate-700 rounded-lg text-white placeholder-gray-400 w-full box-border focus:border-yellow-500 focus:outline-none`,
+  selectBase: `flex p-3 bg-bodydark border-solid border-slate-700 rounded-lg text-white w-full box-border focus:border-yellow-500 focus:outline-none ap`,
+  button: `w-full p-4 bg-blue-500 hover:bg-blue-700 rounded-lg border-none text-white font-bold transition-all duration-300`,
+  toast: `hidden fixed bottom-5 left-1/2 transform -translate-x-1/2
+          bg-green-600 text-white py-3 px-8 rounded-lg shadow-md
+          transition-opacity opacity-0 z-50`,
+  errorToast: `bg-red-600`
+};
+
+---
+
+<form class={styles.form}>
+  <!-- Nombre Completo -->
+  <div class={styles.div}>
+    <label for="name" class={styles.fields}>
+      Nombre Completo
+    </label>
+    <input 
+      type="text" 
+      name="name" 
+      required 
+      minlength="3"
+      placeholder="Tu nombre completo"
+      class={styles.inputBase}
+    />
+    <span class="error-message" id="name-error"></span>
+  </div>
+
+  <!-- Correo Electrónico -->
+  <div class={styles.div}>
+    <label for="email" class={styles.fields}>
+      Correo Electrónico
+    </label>
+    <input 
+      type="email" 
+      name="email" 
+      required
+      placeholder="ejemplo@correo.com"
+      class={styles.inputBase}
+    />
+    <span class="error-message" id="email-error"></span>
+  </div>
+
+  <!-- Teléfono -->
+  <div class={styles.div}>
+    <label for="phone" class={styles.fields}>
+      Teléfono
+    </label>
+    <div class="flex w-full gap-5 ">
+      <select id="country-code" name="countryCode" required class={styles.inputBase}>
+        <option value="+52">🇲🇽 +52 (México)</option>
+        <option value="+1">🇺🇸 +1 (USA)</option>
+        <option value="+44">🇬🇧 +44 (Reino Unido)</option>
+      </select>
+      <input 
+        type="tel" 
+        name="phone" 
+        id="phone"
+        required
+        pattern="[0-9\s]*" 
+        placeholder="123 456 7890"
+        class={styles.inputBase}
+      />
+    </div>
+
+    <span id="phone-error" class="text-red-500 text-sm"></span>
+  </div>
+
+  
+<!-- Interés y Tipo de Propiedad -->
+<div class={styles.div}>
+  <div class="flex flex-row space-x-6 w-full ">
+    <div class="flex flex-col w-1/2 gap-1">
+      <label for="interest" class={styles.fields}>
+        ¿Qué te interesa?
+      </label>
+      <select name="interest" id="interest" required class={styles.inputBase}>
+        <option value="comprar">Comprar propiedad</option>
+        <option value="vender">Vender propiedad</option>
+        <option value="rentar">Rentar propiedad</option>
+      </select>
+    </div>
+
+    <div class="flex flex-col w-1/2 gap-1">
+      <label for="propertyType" class={styles.fields}>
+        Tipo de Propiedad
+      </label>
+      <select name="propertyType" id="propertyType" required class={styles.inputBase}>
+        <option value="casa">Casa</option>
+        <option value="departamento">Departamento</option>
+        <option value="terreno">Terreno</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+  <!-- Presupuesto Estimado -->
+  <div class={styles.div}>
+    <label for="budget" class={styles.fields}>
+      Presupuesto Estimado
+    </label>
+    <select name="budget" id="budget" required class={styles.inputBase}>
+      <option value="1000000">1,000,000 a 5,000,000 MXN</option>
+    </select>
+  </div>
+
+  <!-- Mensaje -->
+  <div class={styles.div}>
+    <label for="message" class={styles.fields}>
+      Mensaje
+    </label>
+    <textarea 
+      name="message" 
+      rows="5" 
+      required 
+      minlength="10"
+      placeholder="Escribe tu mensaje aquí"
+      class={styles.inputBase}
+    ></textarea>
+    <span class="error-message" id="message-error"></span>
+  </div>
+
+  <button type="submit" class={styles.button}>
+    Enviar Mensaje
+  </button>
+</form>
+
+<div id="toast" class={styles.toast}>
+  ¡Formulario enviado con éxito!
+</div>
+
+  
+  <!-- 
+    3. LÓGICA DEL FORMULARIO 
+       - Validación dinámica con pattern según país 
+       - Manejo del envío con Astro Actions 
+       - Manejo de Toast
+  -->
+  <script>
+    // Importaciones de Astro
+    import { actions } from "astro:actions";
+    import { navigate } from "astro:transitions/client";
+  
+    // 1) Seleccionar elementos del DOM
+    const form = document.querySelector('form');
+    const toast = document.querySelector('#toast');
+    const countryCodeSelect = document.querySelector<HTMLSelectElement>('#country-code');
+    const phoneInput = document.querySelector<HTMLInputElement>('#phone');
+    const phoneError = document.querySelector<HTMLElement>('#phone-error');
+  
+    // 2) Diccionario de patrones de validación por país (solo dígitos)
+    const phonePatterns: Record<string, string> = {
+      '+52': '^\\d{10}$', // México: 10 dígitos
+      '+1': '^\\d{10}$',  // USA: 10 dígitos
+      '+44': '^\\d{10}$', // Reino Unido
+      '+33': '^\\d{9}$',  // Francia
+      '+49': '^\\d{10}$', // Alemania
+      '+34': '^\\d{9}$',  // España
+      '+55': '^\\d{11}$', // Brasil
+      '+81': '^\\d{10}$', // Japón
+      '+61': '^\\d{9}$',  // Australia
+    };
+  
+    // 3) Función para mostrar el Toast (mensaje emergente)
+    const showToast = (message: string, isError: boolean = false) => {
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.toggle('error', isError);
+      toast.classList.add('show');
+      toast.classList.remove('hidden');
+  
+      // Duración de 3 segundos antes de ocultarse
+      setTimeout(() => {
+        toast.classList.remove('show');
+        toast.classList.add('hidden');
+      }, 3000);
+    };
+  
+    // 4) Función para actualizar el `pattern` según el país
+    const updatePhonePattern = () => {
+      if (!countryCodeSelect || !phoneInput) return;
+  
+      // Código de país seleccionado
+      const selectedCode = countryCodeSelect.value;
+  
+      // Si el código está en la lista, asignar pattern y mensajes de error
+      if (phonePatterns[selectedCode]) {
+        phoneInput.pattern = phonePatterns[selectedCode];
+        phoneInput.title = `Tu número debe corresponder a ${selectedCode}.`;
+  
+        // Personalización de mensaje de error con setCustomValidity
+        phoneInput.oninvalid = (event) => {
+          event.preventDefault(); 
+          phoneInput.setCustomValidity(
+            `Número no válido para ${selectedCode}.`
+          );
+          // Mostrar error en un span si desea
+          if (phoneError) phoneError.textContent = phoneInput.validationMessage;
+        };
+  
+        // Limpiar error cuando el usuario empiece a escribir
+        phoneInput.oninput = () => {
+          phoneInput.setCustomValidity('');
+          if (phoneError) phoneError.textContent = '';
+        };
+      } else {
+        // Si no hay pattern (ej. 'Otro'), se quita toda la validación extra
+        phoneInput.removeAttribute('pattern');
+        phoneInput.removeAttribute('title');
+        phoneInput.oninvalid = null;
+        phoneInput.oninput = null;
+        if (phoneError) phoneError.textContent = '';
+      }
+    };
+  
+    // 5) Disparar la función cuando cambie el país y al cargar el DOM
+    countryCodeSelect?.addEventListener('change', updatePhonePattern);
+    document.addEventListener('DOMContentLoaded', updatePhonePattern);
+  
+    // 6) Envío del formulario usando la Action de Astro
+    if (form) {
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+  
+        // Recolectar datos en FormData
+        const formData = new FormData(form);
+  
+        // Llamar a la Action de Astro (valida en el servidor con Zod)
+        const { error } = await actions.contactForm(formData);
+  
+        // Manejo de errores en el Toast
+        if (error) {
+          showToast(error.message, true);
+        } else {
+          showToast('Formulario enviado. Redirigiendo...');
+          form.reset();
+  
+          // Redirigir a /confirmation luego de 1 segundo
+          setTimeout(() => {
+            navigate('/confirmation');
+          }, 3000);
+        }
+      });
+    }
+  
+    // 
+    // 7) OPCIONAL: Lógica de Presupuesto Dinámico (si la quiere mantener)
+    //    Actualiza las opciones de presupuesto según el interés (rentar vs comprar/vender).
+    //
+    document.addEventListener('DOMContentLoaded', () => {
+      const interestSelect = document.querySelector('#interest') as HTMLSelectElement | null;
+      const budgetSelect = document.querySelector('#budget') as HTMLSelectElement | null;
+  
+      const rentOptions = [
+        { value: "50000-100000", text: "$50,000 a $100,000 MXN" },
+        { value: "100000-300000", text: "$100,000 a $300,000 MXN" },
+        { value: "300000-500000", text: "$300,000 a $500,000 MXN" }
+      ];
+  
+      const buySellOptions = [
+        { value: "1000000-5000000", text: "1,000,000 a 5,000,000 MXN" },
+        { value: "5000000-10000000", text: "5,000,000 a 10,000,000 MXN" },
+        { value: "10000000-20000000", text: "10,000,000 a 20,000,000 MXN" }
+      ];
+  
+      const updateBudgetOptions = () => {
+        if (!interestSelect || !budgetSelect) return;
+        budgetSelect.innerHTML = '';
+  
+        const selectedInterest = interestSelect.value;
+        const options = selectedInterest === 'rentar' ? rentOptions : buySellOptions;
+  
+        options.forEach(option => {
+          const opt = document.createElement('option');
+          opt.value = option.value;
+          opt.textContent = option.text;
+          budgetSelect.appendChild(opt);
+        });
+      };
+  
+      interestSelect?.addEventListener('change', updateBudgetOptions);
+      updateBudgetOptions();
+    });
+  </script>
+  

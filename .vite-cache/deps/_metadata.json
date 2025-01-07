@@ -1,67 +1,31 @@
 {
-  "hash": "f3864d17",
-  "configHash": "ccc52d90",
-  "lockfileHash": "4c17ad1f",
-  "browserHash": "531149e7",
+  "hash": "3f9be11f",
+  "configHash": "edb5c6b2",
+  "lockfileHash": "d2b0acac",
+  "browserHash": "15447b01",
   "optimized": {
-    "@astrojs/react/client.js": {
-      "src": "../../node_modules/.pnpm/@astrojs+react@4.1.1_@types+node@22.10.2_@types+react-dom@18.3.5_@types+react@18.3.18__@types_jrtlfkgpjca6skchecjvbzvll4/node_modules/@astrojs/react/client.js",
-      "file": "@astrojs_react_client__js.js",
-      "fileHash": "d6d10ad5",
-      "needsInterop": false
-    },
-    "react": {
-      "src": "../../node_modules/.pnpm/react@18.3.1/node_modules/react/index.js",
-      "file": "react.js",
-      "fileHash": "e4e6c7d8",
-      "needsInterop": true
-    },
-    "react/jsx-runtime": {
-      "src": "../../node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js",
-      "file": "react_jsx-runtime.js",
-      "fileHash": "f667a50e",
-      "needsInterop": true
-    },
-    "react/jsx-dev-runtime": {
-      "src": "../../node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-dev-runtime.js",
-      "file": "react_jsx-dev-runtime.js",
-      "fileHash": "5d01a86d",
-      "needsInterop": true
-    },
-    "react-dom": {
-      "src": "../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/index.js",
-      "file": "react-dom.js",
-      "fileHash": "7f1c242e",
-      "needsInterop": true
-    },
     "astro > cssesc": {
       "src": "../../node_modules/.pnpm/cssesc@3.0.0/node_modules/cssesc/cssesc.js",
       "file": "astro___cssesc.js",
-      "fileHash": "c6cf5727",
+      "fileHash": "bc778e0c",
       "needsInterop": true
     },
     "astro > aria-query": {
       "src": "../../node_modules/.pnpm/aria-query@5.3.2/node_modules/aria-query/lib/index.js",
       "file": "astro___aria-query.js",
-      "fileHash": "471cc96a",
+      "fileHash": "12578dd2",
       "needsInterop": true
     },
     "astro > axobject-query": {
       "src": "../../node_modules/.pnpm/axobject-query@4.1.0/node_modules/axobject-query/lib/index.js",
       "file": "astro___axobject-query.js",
-      "fileHash": "17b2dcf0",
+      "fileHash": "66a8f650",
       "needsInterop": true
     }
   },
   "chunks": {
-    "chunk-RGZJWIVM": {
-      "file": "chunk-RGZJWIVM.js"
-    },
-    "chunk-GCKCDIMM": {
-      "file": "chunk-GCKCDIMM.js"
-    },
-    "chunk-5WRI5ZAA": {
-      "file": "chunk-5WRI5ZAA.js"
+    "chunk-BUSYA2B4": {
+      "file": "chunk-BUSYA2B4.js"
     }
   }
 }

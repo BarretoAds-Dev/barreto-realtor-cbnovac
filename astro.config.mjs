@@ -4,7 +4,10 @@ import cloudflare from '@astrojs/cloudflare';
 import tailwind from '@astrojs/tailwind';
 import viteCompression from 'vite-plugin-compression';
 import sitemap from '@astrojs/sitemap';
-import react from '@astrojs/react';
+
+
+
+
 
 
 
@@ -26,12 +29,10 @@ export default defineConfig({
     },
   }), tailwind({
     applyBaseStyles: false,
-  }),  react({
-    include: ['**/react/*'],
-  }),
+}),
 ],
- 
-  vite: {
+
+vite: {
     build: {
       minify: 'esbuild',
       cssCodeSplit: true,

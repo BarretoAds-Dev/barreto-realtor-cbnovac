@@ -1,19 +1,20 @@
 ---
-// src/pages/index.astro
+// src/pages/confirmation.astro
 
 import Layout from '@layouts/Layout.astro';
-import Profile from '@components/contents/Profile.astro';
 
 
 
 
 const meta = {
-  title: "Conoce más | Barreto - Agente Inmobiliario en CDMX, MX.",
+  title: "Correo enviado | Barreto - Agente Inmobiliario en CDMX, MX.",
   description: "Enmanuel Barreto, asesor inmobiliario en Coldwell Banker Novac...",
   url: "https://barretoads.dev",
   image: "",
   ogType: "website",
   ogLocale: "es_MX",
+  noindex: true,  // Esta página no se indexará
+
 };
 ---
 
@@ -21,9 +22,10 @@ const meta = {
 
 
 
-  <article class="-mt-28">
-    <Profile />
- 
+  <article class="">
+
+    
+    <h1 class="text-3xl font-bold text-center p-10">¡Gracias por tu mensaje!</h1>
   </article> 
 
 </Layout>

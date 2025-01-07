@@ -1,27 +1,36 @@
 ---
 const { id, title, description } = Astro.props;
+import SignupForm from '@components/SignupForm.astro';
+
+
+
 ---
 
 <!-- Popup Modal -->
 <div id={id} 
-  class="fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-500 ease-in-out opacity-0 scale-90 pointer-events-none target:opacity-100 target:scale-100 target:pointer-events-auto bg-black/50"
+  class="fixed inset-0 flex items-start justify-center h-auto: z-50 transition-all duration-500 ease-in-out opacity-0 scale-95 pointer-events-none target:opacity-100 target:scale-100 target:pointer-events-auto bg-black/70 backdrop-blur-md p-10 max-h-screen overflow-y-auto"
   aria-labelledby={`${id}-title`}
   aria-describedby={`${id}-desc`}>
 
   <!-- Contenido del Popup -->
-  <div class="relative bg-yellow-800 p-8 rounded-lg max-w-80 shadow-xl z-10">
+  <div class="relative bg-neutral-900 p-8 rounded-2xl w-full shadow-2xl z-10">
     
     <!-- Botón para Cerrar el Popup -->
     <a href="#" 
-      class="absolute top-3 right-3" 
-      aria-label="Close Popup">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 p-2 rounded-lg bg-slate-900 hover:bg-yellow-500 transition-colors" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M6 18L18 6M6 6l12 12"></path>
+      class="absolute top-4 right-4 flex items-center justify-center w-10 h-10 rounded-full bg-neutral-700 hover:bg-yellow-500 transition duration-300"
+      aria-label="Cerrar Popup">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white hover:text-neutral-900" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </a>
     
     <!-- Título y Descripción del Popup -->
-    <h2 id={`${id}-title`} class="text-2xl font-bold text-white mb-4">{title}</h2>
-    <p id={`${id}-desc`} class="text-neutral-300">{description}</p>
+    <h2 id={`${id}-title`} class="text-3xl font-bold text-white mb-4 text-center">{title}</h2>
+    <p id={`${id}-desc`} class="text-neutral-400 text-center mb-6 leading-relaxed">{description}</p>
+    
+    <!-- Formulario -->
+    <div class="w-full">
+      <SignupForm />
+    </div>
   </div>
 </div>

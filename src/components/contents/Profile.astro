@@ -1,5 +1,7 @@
 ---
-import userData from "../data/user.json";
+import userData from "../../data/user.json";
+
+
 const { profileData, links } = userData;
 const locationTagsRepeated = profileData?.locationTags ? [...profileData.locationTags, ...profileData.locationTags] : [];
 
@@ -91,7 +93,7 @@ const preloadType = preloadImage.endsWith('.avif') ? 'image/avif' : 'image/webp'
     {links?.slice(6, 7).map((link) => (
       <a
         href={link.url}
-        class="w-full text-center p-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-500 transition-all duration-300 shadow-md focus:ring-4 focus:ring-blue-300 focus:outline-none"
+        class="w-full text-center p-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-md focus:ring-4 focus:ring-blue-300 focus:outline-none"
         aria-label={link.description || `Ir a ${link.title}`}
     
       >

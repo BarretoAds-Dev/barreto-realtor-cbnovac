@@ -1,19 +1,16 @@
 ---
-const { title, description, url, headerImage } = Astro.props;
+const { title, description, url, image, ogType, ogLocale, noindex = false } = Astro.props;
 
+const isProduction = import.meta.env.PROD;
 const fontUrl =
   "https://cdn.jsdelivr.net/fontsource/fonts/montserrat:vf@latest/latin-wght-normal.woff2";
 
-// const images = [
-//   // { name: '/images/Barreto-Cover-bg.avif', type: 'avif' },
-//   // { name: '/images/Barreto-Cover-bg.webp', type: 'webp' }
-//   // { name: '/images/EnmaPerfil.avif', type: 'avif' },
-//   // { name: '/images/EnmaPerfil.webp', type: 'webp' }
-// ];
-
-// const crossorigin = 'anonymous';
-// const fetchPriority = 'high';
+// Definir la metaetiqueta robots condicionalmente
+const robotsMeta = !isProduction || noindex
+  ? 'noindex, nofollow'
+  : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
 ---
+
 
 <head>
   <meta charset="UTF-8" />
@@ -31,8 +28,8 @@ const fontUrl =
   <meta property="og:site_name" content="Barreto | Asesor Inmobiliario en Coldwell Banker Novac - CDMX/MX." />
   <meta property="og:locale" content="es_ES" />
 
-  <!-- Robots meta tag for SEO control -->
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+   <!-- Robots meta tag for SEO control -->
+   <meta name="robots" content={robotsMeta} />
 
   <!-- Precarga de la fuente -->
   <link 
@@ -50,17 +47,5 @@ const fontUrl =
   />
 
   <!-- Precarga de recursos locales -->
-
-<link rel="preconnect" href="https://barretoads.dev" crossorigin="anonymous" />
-
-<!-- {images.map((image) => (
-  <link
-    rel="preload"
-    as="image"
-    href={image.name}
-    type={`image/${image.type}`}
-    fetchpriority={fetchPriority}
-    crossorigin={crossorigin}
-  />
-))} -->
+  <link rel="preconnect" href="https://barretoads.dev" crossorigin="anonymous" />
 </head>

@@ -1,5 +1,5 @@
 ---
-import Popup from "../../components/header/sub-components/Popup.astro";
+import Popup from "@components/header/sub-components/Popup.astro";
 import userData from "../../data/user.json";
 
 const profileData = userData.profileData || {
@@ -64,12 +64,11 @@ const commonButtonStyle = "flex items-center gap-2 bg-white text-bodydark font-m
       </li>
     </ul>
   </nav>
-
-  <!-- Invocación del Componente Popup -->
-  <Popup 
-    id="popup"
-    title="QR Code"
-    description="Escanea este código para acceder a más información."
-    aria-hidden="true"
-  />
+<!-- Invocación del Componente Popup -->
+<Popup 
+  id="popup"
+  title="Contáctanos"
+  description="Nos encantaría ayudarte con tu próxima propiedad"
+  aria-hidden="true"
+/>
 </header>
