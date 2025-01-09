@@ -68,7 +68,7 @@
       "description": "Mira videos de tips inmobiliarios y propiedades en TikTok."
     },
     {
-      "url": "/",
+      "url": "#popup",
       "icon": "/icons/asesoria.svg",
       "title": "Asesoría Gratuita",
       "description": "Agenda una asesoría gratuita con un experto inmobiliario."

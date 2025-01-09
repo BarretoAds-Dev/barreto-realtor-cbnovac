@@ -76,7 +76,7 @@ export const server = {
         })();
 
         const emailData = {
-          from: 'Barreto | Realtor <contacto@barretoads.dev>',
+          from: 'Barreto | Coldwell Banker Novac <contacto@barretoads.dev>',
           to: ['Barretoj.ads@icloud.com'],
           subject: `Nuevo mensaje de contacto - ${name}`,
           html: `

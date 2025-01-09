@@ -6,9 +6,12 @@ const styles = {
   inputBase: `appearance-none flex p-3 bg-bodydark border-solid border-slate-700 rounded-lg text-white placeholder-gray-400 w-full box-border focus:border-yellow-500 focus:outline-none`,
   selectBase: `flex p-3 bg-bodydark border-solid border-slate-700 rounded-lg text-white w-full box-border focus:border-yellow-500 focus:outline-none ap`,
   button: `w-full p-4 bg-blue-500 hover:bg-blue-700 rounded-lg border-none text-white font-bold transition-all duration-300`,
-  toast: `hidden fixed bottom-5 left-1/2 transform -translate-x-1/2
-          bg-green-600 text-white py-3 px-8 rounded-lg shadow-md
-          transition-opacity opacity-0 z-50`,
+  
+  toast: ` 
+  fixed bottom-5 left-1/2 transform -translate-x-1/2 translate-y-full
+  bg-green-600 text-white py-3 px-8 rounded-lg shadow-md
+  transition-all duration-300 ease-in-out z-50`,
+      
   errorToast: `bg-red-600`
 };
 
@@ -46,17 +49,30 @@ const styles = {
     <span class="error-message" id="email-error"></span>
   </div>
 
-  <!-- Teléfono -->
-  <div class={styles.div}>
-    <label for="phone" class={styles.fields}>
-      Teléfono
-    </label>
-    <div class="flex w-full gap-5 ">
+<!-- Teléfono -->
+<div class={styles.div}>
+  <div class="flex flex-row gap-2 w-full">
+    <!-- Código de País -->
+    <div class="flex flex-col w-1/3 gap-1">
+      <label for="country-code" class={styles.fields}>
+        Código de País
+      </label>
       <select id="country-code" name="countryCode" required class={styles.inputBase}>
         <option value="+52">🇲🇽 +52 (México)</option>
         <option value="+1">🇺🇸 +1 (USA)</option>
-        <option value="+44">🇬🇧 +44 (Reino Unido)</option>
+        <option value="+49">🇩🇪 +49 (Alemania)</option>
+        <option value="+1">🇨🇦 +1 (Canadá)</option>
+        <option value="+81">🇯🇵 +81 (Japón)</option>
+        <option value="+34">🇪🇸 +34 (España)</option>
+        <option value="otro">🌐 Otro</option>
       </select>
+    </div>
+
+    <!-- Número de Teléfono -->
+    <div class="flex flex-col w-2/3 gap-1">
+      <label for="phone" class={styles.fields}>
+        Teléfono
+      </label>
       <input 
         type="tel" 
         name="phone" 
@@ -67,14 +83,14 @@ const styles = {
         class={styles.inputBase}
       />
     </div>
-
-    <span id="phone-error" class="text-red-500 text-sm"></span>
   </div>
+  <span id="phone-error" class="text-red-500 text-sm"></span>
+</div>
 
   
 <!-- Interés y Tipo de Propiedad -->
 <div class={styles.div}>
-  <div class="flex flex-row space-x-6 w-full ">
+  <div class="flex flex-row gap-2 w-full ">
     <div class="flex flex-col w-1/2 gap-1">
       <label for="interest" class={styles.fields}>
         ¿Qué te interesa?
@@ -134,7 +150,18 @@ const styles = {
   ¡Formulario enviado con éxito!
 </div>
 
-  
+
+  <style>
+    #toast.show {
+  transform: translate(-50%, 0) !important;
+  /* si desea animar opacidad: */
+  opacity: 1 !important;
+}
+#toast {
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+  </style>
   <!-- 
     3. LÓGICA DEL FORMULARIO 
        - Validación dinámica con pattern según país 
@@ -174,11 +201,11 @@ const styles = {
       toast.classList.add('show');
       toast.classList.remove('hidden');
   
-      // Duración de 3 segundos antes de ocultarse
+      // Duración de 1.5 segundos antes de ocultarse
       setTimeout(() => {
         toast.classList.remove('show');
         toast.classList.add('hidden');
-      }, 3000);
+      }, 1500);
     };
   
     // 4) Función para actualizar el `pattern` según el país
@@ -243,7 +270,7 @@ const styles = {
           // Redirigir a /confirmation luego de 1 segundo
           setTimeout(() => {
             navigate('/confirmation');
-          }, 3000);
+          }, 2000);
         }
       });
     }
@@ -257,16 +284,20 @@ const styles = {
       const budgetSelect = document.querySelector('#budget') as HTMLSelectElement | null;
   
       const rentOptions = [
-        { value: "50000-100000", text: "$50,000 a $100,000 MXN" },
-        { value: "100000-300000", text: "$100,000 a $300,000 MXN" },
-        { value: "300000-500000", text: "$300,000 a $500,000 MXN" }
-      ];
+  { value: "25000-40000", text: "$25,000 a $40,000 MXN" },
+  { value: "40000-60000", text: "$40,000 a $60,000 MXN" },
+  { value: "60000-80000", text: "$60,000 a $80,000 MXN" },
+  { value: "80000-100000", text: "$80,000 a $100,000 MXN" },
+  { value: "100000+", text: "Más de $100,000 MXN" }
+];
   
-      const buySellOptions = [
-        { value: "1000000-5000000", text: "1,000,000 a 5,000,000 MXN" },
-        { value: "5000000-10000000", text: "5,000,000 a 10,000,000 MXN" },
-        { value: "10000000-20000000", text: "10,000,000 a 20,000,000 MXN" }
-      ];
+const buySellOptions = [
+  { value: "3000000-5000000", text: "$3,000,000 a $5,000,000 MXN" },
+  { value: "5000000-10000000", text: "$5,000,000 a $10,000,000 MXN" },
+  { value: "10000000-20000000", text: "$10,000,000 a $20,000,000 MXN" },
+  { value: "20000000-50000000", text: "$20,000,000 a $50,000,000 MXN" },
+  { value: "50000000+", text: "Más de $50,000,000 MXN" }
+];
   
       const updateBudgetOptions = () => {
         if (!interestSelect || !budgetSelect) return;
