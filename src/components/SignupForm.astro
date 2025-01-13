@@ -52,12 +52,18 @@ const styles = {
 <!-- Teléfono -->
 <div class={styles.div}>
   <div class="flex flex-row gap-2 w-full">
+
     <!-- Código de País -->
-    <div class="flex flex-col w-1/3 gap-1">
+    <div class="flex flex-col gap-1 sm400:w-[10rem] w-[2.7rem]">
       <label for="country-code" class={styles.fields}>
-        Código de País
+        País
       </label>
-      <select id="country-code" name="countryCode" required class={styles.inputBase}>
+      <select
+        id="country-code"
+        name="countryCode"
+        required
+        class={styles.inputBase}
+      >
         <option value="+52">🇲🇽 +52 (México)</option>
         <option value="+1">🇺🇸 +1 (USA)</option>
         <option value="+49">🇩🇪 +49 (Alemania)</option>
@@ -69,16 +75,16 @@ const styles = {
     </div>
 
     <!-- Número de Teléfono -->
-    <div class="flex flex-col w-2/3 gap-1">
+    <div class="flex flex-col w-4/5 gap-1">
       <label for="phone" class={styles.fields}>
         Teléfono
       </label>
-      <input 
-        type="tel" 
-        name="phone" 
+      <input
+        type="tel"
+        name="phone"
         id="phone"
         required
-        pattern="[0-9\s]*" 
+        pattern="[0-9\s]*"
         placeholder="123 456 7890"
         class={styles.inputBase}
       />
@@ -87,11 +93,12 @@ const styles = {
   <span id="phone-error" class="text-red-500 text-sm"></span>
 </div>
 
+
   
 <!-- Interés y Tipo de Propiedad -->
 <div class={styles.div}>
-  <div class="flex flex-row gap-2 w-full ">
-    <div class="flex flex-col w-1/2 gap-1">
+  <div class="flex flex-col sm400:flex-row gap-2 w-full ">
+    <div class="flex flex-col sm400:w-1/2 gap-1 w-full">
       <label for="interest" class={styles.fields}>
         ¿Qué te interesa?
       </label>
@@ -102,7 +109,7 @@ const styles = {
       </select>
     </div>
 
-    <div class="flex flex-col w-1/2 gap-1">
+    <div class="flex flex-col sm400:w-1/2 gap-1 w-full">
       <label for="propertyType" class={styles.fields}>
         Tipo de Propiedad
       </label>
@@ -115,15 +122,80 @@ const styles = {
   </div>
 </div>
 
-  <!-- Presupuesto Estimado -->
-  <div class={styles.div}>
-    <label for="budget" class={styles.fields}>
-      Presupuesto Estimado
-    </label>
-    <select name="budget" id="budget" required class={styles.inputBase}>
-      <option value="1000000">1,000,000 a 5,000,000 MXN</option>
-    </select>
+
+
+<!-- Presupuesto Estimado -->
+<div class={styles.div}>
+  <div class="flex flex-col sm400:flex-row gap-2 w-full">
+    <!-- Presupuesto -->
+    <div class="flex flex-col sm400:w-[65%] w-full gap-1">
+      <label for="budget" class={styles.fields}>
+        Presupuesto Estimado
+      </label>
+      <select
+        name="budget"
+        id="budget"
+        required
+        class={styles.inputBase}
+      >
+        <option value="1000000">1,000,000 a 5,000,000 MXN</option>
+        <option value="5000000">5,000,000 a 10,000,000 MXN</option>
+        <option value="10000000">10,000,000 a 20,000,000 MXN</option>
+        <option value="20000000">20,000,000+ MXN</option>
+      </select>
+    </div>
+
+    <!-- Zonas -->
+    <div class="flex flex-col sm400:w-[35%] w-full gap-1">
+      <label for="zones" class={styles.fields}>
+        Zonas de Interés
+      </label>
+      <select
+        name="zones"
+        id="zones"
+        required
+        class={styles.inputBase}
+      >
+        <!-- Miguel Hidalgo -->
+        <optgroup label="Miguel Hidalgo">
+          <option value="" disabled selected>Colonia...</option>
+          <option value="anahuac">Anáhuac</option>
+          <option value="anzures">Anzures</option>
+          <option value="lomas-de-chapultepec">Lomas de Chapultepec</option>
+          <option value="polanco">Polanco</option>
+          <option value="san-miguel-chapultepec">San Miguel Chapultepec</option>
+          <option value="tacubaya">Tacubaya</option>
+          <option value="otra-colonia">Otra Colonia</option>
+        </optgroup>
+
+        <!-- Benito Juárez -->
+        <optgroup label="Benito Juárez">
+          <option value="del-valle">Del Valle</option>
+          <option value="napoles">Nápoles</option>
+          <option value="narvarte">Narvarte</option>
+          <option value="nochebuena">Nochebuena</option>
+          <option value="portales">Portales</option>
+          <option value="xoco">Xoco</option>
+          <option value="otra-colonia">Otra Colonia</option>
+        </optgroup>
+
+        <!-- Cuauhtémoc -->
+        <optgroup label="Cuauhtémoc">
+          <option value="centro-historico">Centro Histórico</option>
+          <option value="condesa">Condesa</option>
+          <option value="juarez">Juárez</option>
+          <option value="roma">Roma</option>
+          <option value="san-rafael">San Rafael</option>
+          <option value="santa-maria-la-ribera">Santa María la Ribera</option>
+          <option value="tabacalera">Tabacalera</option>
+          <option value="otra-colonia">Otra Colonia</option>
+        </optgroup>
+
+      </select>
+    </div>
   </div>
+</div>
+
 
   <!-- Mensaje -->
   <div class={styles.div}>

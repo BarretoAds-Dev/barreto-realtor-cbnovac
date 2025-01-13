@@ -12,6 +12,10 @@ export default {
 			fontFamily: {
 				montserrat: ['"montserrat"', 'sans-serif'],
 			  },
+			  screens: {
+				sm400: '565px', // Punto de ruptura para 400px
+			  },
+		
 		},
 	},
 	corePlugins: {

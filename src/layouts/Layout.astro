@@ -4,27 +4,27 @@ import Metahead from '@layouts/Metahead.astro';
 import Header from '@components/header/Header.astro';
 import Footer from '@components/footer/Footer.astro';
 
-interface Props {
+interface LayoutProps {
   title: string;
   description: string;
   url: string;
   image: string;
 }
 
-const { title, description, url, image } = Astro.props;
+const { title, description, url, image } = Astro.props as LayoutProps;
 ---
 
 <!doctype html>
 
 
 <html lang="es" dir="ltr">
-<Metahead title={title} description={description} url={url} image={image} />
-
-
-  <body class="m-2 p-2 max-w-[450px]">
+  <head>
+    <Metahead title={title} description={description} url={url} image={image} />
+  </head>
+  <body class="grid grid-cols-1 m-2 p-2 w-full max-w-md sm:min-w-96 bg-bodydark rounded-3xl">
     <Header />
        <!-- Content Section -->
-        <main>
+        <main role="main">
           <slot />
         </main>
     <Footer />    
@@ -50,15 +50,18 @@ const { title, description, url, image } = Astro.props;
     lazy: "loading";
   }
   
-	html {
-		@apply  flex flex-col m-0 p-0 box-border min-h-screen  w-screen antialiased bg-neutral-950 text-fontlight font-montserrat justify-center items-center;
-	}
+  html {
+    @apply flex flex-col justify-center items-center m-0 p-0 box-border min-h-screen w-screen antialiased bg-neutral-950 text-fontlight font-montserrat;
+  }
 
-	main, body  {
-    min-height: 100vh; /* Fallback */
-    min-height: 100dvh; /* Dinámico */
-	@apply flex flex-col justify-start items-center rounded-3xl bg-bodydark w-full;
-	}
+   main {
+    @apply flex justify-start items-center;
+   }
+    body {
+      min-height: 100vh; /* Fallback */
+      min-height: 100dvh; /* Dinámico */
+      
+    }
 
 
   /* Estilos globales */
